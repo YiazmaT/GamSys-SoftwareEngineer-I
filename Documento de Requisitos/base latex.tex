@@ -1,0 +1,190 @@
+\documentclass[12pt,onecolumn]{article}
+%\documentclass[conference]{IEEEtran}
+
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc} %acentos
+\usepackage{graphicx} %figuras
+\usepackage{latex8} %estilo
+\usepackage{tabto}
+\usepackage{verbatim} %comentário em bloco
+
+\title{
+Documento de Requisitos\\Sistema GamSys
+}
+\author{Eymar Ferrario de Lima - RA: 141257792\\Matheus Prachedes Batista RA: 141254793\\ 
+Departamento de Matemática e Computação -- Faculdade de Ciências e Tecnologia \\
+UNESP-Universidade Estadual Paulista ``Júlio de Mesquita Filho'' \\
+Presidente Prudente, SP - Brazil \\				
+eymarlima@gmail.com\\mortzion@hotmail.com
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle % insere título, faz ele aparecer
+
+%\begin{abstract}
+%\textbf{}
+%\end{abstract}
+
+%------------------------------------------------------------------------------
+\section{Introdução}
+%\label{sect:intro}
+
+\subsection{Propósito do documento de requisitos}
+\textbf{
+O objetivo deste documento é apresentar os requisitos utilizados para o desenvolvimento do Sistema GamSys, assim como os recursos de software e hardware necessários para desenvolver o sistema.\\\\
+De forma clara e objetiva, o documento tem como finalidade especificar todos os requisitos referentes ao sistema. Seu público alvo são colecionadores de jogos e usuários de softwares que visam unificar seus programas em uma única biblioteca, assim como encontrar e se comunicar com outras pessoas que possuem os mesmos SJ.
+}
+
+\subsection{Escopo do Produto}
+\textbf{
+GamSys é um Software para facilitar a compra e venda de SJ em mídias digitais, assim como unificar todos os SJ de um usuário em uma mesma biblioteca. O usuário ao utilizar a aplicação, poderá comprar SJ das distribuidoras e, após a confirmação de pagamento, os mesmos serão armazenados na conta do usuário, permitindo acesso rápido a uma biblioteca pessoal, assim como o download e a atualização de forma fácil e prática dos SJ obtidos em diferentes computadores; uma das vantagens do GamSys é a fácil interação entre usuários, podendo adicionar usuários a uma lista pessoal de amigos, se comunicar com os mesmos através de mensagens de texto e a criação de comunidades aonde usuários poderão compartilhar experiências entre si; Devido ao fato dos SJ vendidos serem de diferentes desenvolvedoras, o GamSys não se responsabiliza pela consistência dos servidores de download das desenvolvedoras;
+}
+
+\subsection{Definições, siglas e abreviações}
+\subsubsection{Definições}
+\textbf{
+- GamSys: Nome do Sistema
+}
+\subsubsection{Abreviações}
+\textbf{
+- SJ: Softwares e Jogos
+}
+
+\subsection{Visão geral do documento de requisitos}
+\textbf{
+Este documento apresenta uma descrição geral dos requisitos do Sistema GamSys, desta forma, na sessão 2 realizaremos uma descrição geral do Sistema e na sessão 3 abordaremos os requisitos específicos do Sistema. 
+}
+
+%------------------------------------------------------------------------------
+
+\section{Descrição Geral}
+%\label{sect:relworks}
+
+\subsection{Perspectiva do Produto}
+\textbf{
+O sistema opera com uma máquina servidor que armazena as informações dos usuários para a autenticação e gerencia o acesso dos clientes logados no sistema.
+}
+
+\subsection{Funções do Produto}
+\textbf{
+Gerenciamento de vendas: permitir que o usuário compre SJ de diversas desenvolvedoras;\\\\
+Gerenciamento de usuários: cadastrar, modificar e excluir usuários;\\\\
+Interação entre usuários: comunicação com outros usuários e criação de comunidades. 
+}
+
+\subsection{Características do Usuário}
+\textbf{Os principais usuários são apreciadores e colecionadores que buscam unificar em uma única biblioteca seus SJ.
+}
+
+\subsection{Restrições}
+\textbf{
+O Sistema não apresenta restrições pois não necessita de grandes especificações de hardware, tão pouco de dispositivos periférios.
+}
+
+\subsection{Suposições e Dependências}
+\textbf{
+Como o sistema será desenvolvido em Java, não possuem limitações quanto ao sistema operacional, desde que o mesmo possua uma Máquina Virtual Java instalada.
+}
+
+%------------------------------------------------------------------------------
+
+\section{Requisitos Específicos}
+%\label{sect:development}
+
+\subsection{Requisitos Funcionais}
+\textbf{
+1.0	- Deve ser capaz de autenticar um usuário através de um identificador;\\
+1.1	- Recuperar do servidor as informações básicas do usuário assim como a sua biblioteca de SJ;\\
+2.0 - Recuperar do servidor as informações dos SJ presentes na loja online;\\
+2.1 - Navegar pela loja utilizando o sistema;\\
+2.2 - Adicionar itens ao carrinho de compras através da loja do sistema;\\
+2.3 - Manter os itens a serem comprados em um carrinho de compras, até que o usuário complete a compra;\\
+2.4 - Calcular e exibir o preço total dos itens armazenados no carrinho de compras;\\
+2.5	- Remover itens do carrinho de compras;\\
+2.6 - Possibilitar ao usuário pagar a compra com diferentes bandeiras de cartão de crédito;\\
+2.7	- Armazenar na conta do usuário os SJ adquiridos após a confirmação de compra;\\
+3.0 - Permitir ao usuário adicionar outros usuários através do ID ou nome do outro usuário;\\
+3.1 - Permitir que o usuário converse através de mensagens de texto com outros usuários em tempo real;\\
+3.2 - Permitir ao usuário criar comunidades e adicinar outros usuários a mesma;\\
+4.0 - Deve ser capaz de baixar e atualizar os SJ presentes em sua biblioteca pessoal do usuário;\\
+4.1 - Buscar no servidor se o programa instalado na máquina do usuário está atualizado, no momento que o mesmo tentar iniciar o programa;\\
+4.2 - Avisar ao usuário caso o programa esteja desatualizado;\\
+5.0 - Limitar algumas funcionalidades do programa apenas para usuários administradores;\\
+5.1 - Adicionar novos SJ a loja online;\\
+5.2 - Remover SJ presentes na loja online;\\
+5.3 - Alterar informações dos SJ presentes na loja online;\\
+5.4 - Atualizar o servidor após mudanças realizadas na loja online;\\
+}
+
+\subsection{Requisitos Não Funcionais}
+\textbf{
+1.0 - O Sistema será desenvolvido utilizando a linguagem Java;\\
+1.1 - Será utilizado o ambiente de desenvolvimento integrado NetBeans;\\
+1.2 - O Sistema gerenciador de banco de dados será o MySQL;\\
+}
+
+%nao vai precisar fazer;
+\begin{comment}
+\subsection{Interfaces Externas}
+\textbf{
+a fazer com menino mort.
+}
+
+\subsection{Requisitos de Desempenho}
+\textbf{
+O Sistema permitirá apenas um usuário logado por computador. O mesmo não trata questões de sobrecarga referentes a usuários baixando os mesmos SJ, isso é responsabilidade das desenvolvedoras dos SJ e seus respectivos servidores.
+}
+
+\subsection{Requisitos Lógicos de Banco de Dados}
+\textbf{
+a fazer com menino mort.
+}
+
+\subsection{Restrições de Projeto}
+\textbf{
+a fazer com menino mort.
+}
+
+\subsection{Atributos do Sistema de Software}
+\textbf{
+a fazer com menino mort.
+}
+
+\subsection{Organização}
+\textbf{
+a fazer com menino mort.
+}
+\end{comment}
+
+%------------------------------------------------------------------------------
+
+%não precisa fazer;
+\begin{comment}
+\section{Informações de Apoio}
+%\label{sect:results}
+\textbf{
+a fazer com menino mort.
+}
+
+\subsection{Índice}
+\textbf{
+a fazer com menino mort.
+}
+
+\subsection{Apêndices}
+\textbf{
+a fazer com menino mort.
+}
+\end{comment}
+
+%------------------------------------------------------------------------------
+
+%\section{Conclusões}
+%\label{sect:conclusion}
+%\textbf{}
+
+%------------------------------------------------------------------------------
+
+\end{document}
