@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.18)  26 APR 2016 20:14
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.18)  26 APR 2016 21:57
 entering extended mode
 **base*latex.tex
 
@@ -163,12 +163,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 76--77
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 129--130
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
 
  []
 
@@ -178,7 +178,7 @@ o-GamSys\Documento de Requisitos\base latex.aux") )
 Here is how much of TeX's memory you used:
  1564 strings out of 493921
  21294 string characters out of 3147267
- 80015 words of memory out of 3000000
+ 81015 words of memory out of 3000000
  4875 multiletter control sequences out of 15000+200000
  8376 words of font info for 25 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -187,7 +187,7 @@ Here is how much of TeX's memory you used:
 /fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb>
-Output written on "base latex.pdf" (4 pages, 57697 bytes).
+Output written on "base latex.pdf" (4 pages, 57717 bytes).
 PDF statistics:
  28 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
