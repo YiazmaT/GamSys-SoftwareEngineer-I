@@ -1,0 +1,208 @@
+\documentclass[12pt,onecolumn]{article}
+%\documentclass[conference]{IEEEtran}
+
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc} %acentos
+\usepackage{graphicx} %figuras
+\usepackage{latex8} %estilo
+\usepackage{tabto}
+\usepackage{verbatim} %comentário em bloco
+
+\title{
+Casos de Uso\\Sistema GamSys
+}
+\author{Eymar Ferrario de Lima - RA: 141257792\\Matheus Prachedes Batista RA: 141254793\\ 
+Departamento de Matemática e Computação -- Faculdade de Ciências e Tecnologia \\
+UNESP-Universidade Estadual Paulista ``Júlio de Mesquita Filho'' \\
+Presidente Prudente, SP - Brazil \\				
+eymarlima@gmail.com\\mortzion@hotmail.com
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle % insere título, faz ele aparecer
+
+%---------------------------------------------------------------%
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Criar Conta de Usuário}\\ \hline
+Atores: & Usuário Comum\\ \hline
+Tipo: & Primário\\ \hline
+Descrição: & O usuário introduz os seus dados pessoais. O sistema valida a requisição e as informações inseridas. Por fim a conta do usuário comum é criada.
+\end{tabular}
+\end{center}
+\end{table}
+%---------------------------------------------------------------%
+
+%---------------------------------------------------------------%
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Alterar Informações Pessoais do Usuário}\\ \hline
+Atores: & Usuário Comum\\ \hline
+Tipo: & Secundário\\ \hline
+Descrição: & O usuário escolhe qual informação será altera. Introduz a nova informação. A informação é alterada.
+\end{tabular}
+\end{center}
+\end{table}
+%---------------------------------------------------------------%
+
+%---------------------------------------------------------------%
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Comprar Softwares e Jogos} \\ \hline
+Atores: & Usuário Comum\\ \hline
+Tipo: & Primário\\ \hline
+Descrição: & O Usuário adiciona ao carrinho de compra os Softwares que deseja comprar. O GamSys registra a compra e autentica o cartão utilizado. Os Softwares comprados são adicionados a biblioteca do Usuário.
+\end{tabular}
+\end{center}
+\end{table}
+%---------------------------------------------------------------%
+
+%---------------------------------------------------------------%
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Pesquisar Softwares e Jogos} \\ \hline
+Atores: & Usuário Comum\\ \hline
+Tipo: & Primário\\ \hline
+Descrição: & O Usuário pesquisa Softwares através de palavras chaves e consulta os preços de Softwares presentes na loja.
+\end{tabular}
+\end{center}
+\end{table}
+%---------------------------------------------------------------%
+
+%---------------------------------------------------------------%
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Adicionar um Usuário} \\ \hline
+Atores: & Solicitante, Solicitado\\ \hline
+Tipo: & Primário\\ \hline
+Descrição: & O Solicitante envia uma solicitação de amizade para o Solicitado utilizando uma identificação de usuário. O Solicitado aceita a solicitação. Um passa a pertencer a lista de amigos do outro.
+\end{tabular}
+\end{center}
+\end{table}
+%---------------------------------------------------------------%
+
+%---------------------------------------------------------------%
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Envio de Mensagem} \\ \hline
+Atores: & Destinatário, Remetente\\ \hline
+Tipo: & Primário\\ \hline
+Descrição: & Remetente envia uma mensagem de texto para o Destinatário. O Destinatário recebe a mensagem.
+\end{tabular}
+\end{center}
+\end{table}
+%---------------------------------------------------------------%
+
+%---------------------------------------------------------------%
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Criar Comunidade} \\ \hline
+Atores: & Usuário Comum\\ \hline
+Tipo: & Primário\\ \hline
+Descrição: & O Usuário entra com as informações da comunidade e o sistema cria uma Comunidade.
+\end{tabular}
+\end{center}
+\end{table}
+%---------------------------------------------------------------%
+
+%---------------------------------------------------------------%
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Adicionar um Usuário a uma Comunidade} \\ \hline
+Atores: & Administrador da Comunidade, Usuário Comum\\ \hline
+Tipo: & Primário\\ \hline
+Descrição: & O Administrador da comunidade envia uma solicitação para o Usuário através de uma informação do usuário.
+\end{tabular}
+\end{center}
+\end{table}
+%---------------------------------------------------------------%
+
+%---------------------------------------------------------------%
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Remover um Usuário de uma Comunidade} \\ \hline
+Atores: & Administrador da Comunidade, Usuário Comum\\ \hline
+Tipo: & Secundário\\ \hline
+Descrição: & O Administrador da comunidade remove o Usuário. O mesmo deixa de participar da comunidade.
+\end{tabular}
+\end{center}
+\end{table}
+%---------------------------------------------------------------%
+
+%---------------------------------------------------------------%
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Publicar Mensagem em uma Comunidade} \\ \hline
+Atores: & Usuário Comum\\ \hline
+Tipo: & Primário\\ \hline
+Descrição: & O Usuário escolhe uma comunidade. Escreve e publica uma mensagem de texto na mesma.
+\end{tabular}
+\end{center}
+\end{table}
+%---------------------------------------------------------------%
+
+%---------------------------------------------------------------%
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Alterar Informações da Comunidade} \\ \hline
+Atores: & Administrador da Comunidade\\ \hline
+Tipo: & Secundário\\ \hline
+Descrição: & O Administrador seleciona uma informação a ser alterada. Insere a nova informação. A informação é alterada.
+\end{tabular}
+\end{center}
+\end{table}
+%---------------------------------------------------------------%
+
+%---------------------------------------------------------------%
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Baixar Software e Jogos} \\ \hline
+Atores: & Usuário comum\\ \hline
+Tipo: & Primário\\ \hline
+Descrição: & O Usuário seleciona um Software não instalado em seu computador. Solicita o download do Software ao servidor. O Software é baixado e instalado no computador do usuário.
+\end{tabular}
+\end{center}
+\end{table}
+%---------------------------------------------------------------%
+
+%---------------------------------------------------------------%
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Atualizar Softwares e Jogos} \\ \hline
+Atores: & Usuário Comum\\ \hline
+Tipo: & Primário\\ \hline
+Descrição: & O Usuário seleciona um software desatualizado. Solicita o download da nova versão do Software ao servidor. A nova versão é baixada e instalada.
+\end{tabular}
+\end{center}
+\end{table}
+%---------------------------------------------------------------%
+
+%---------------------------------------------------------------%
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Alterar um produto da loja} \\ \hline
+Atores: & Administrador\\ \hline
+Tipo: & Primário\\ \hline
+Descrição: & O Administrador escolhe um produto da loja. Escolhe a informação para ser alterada. O Administrador insere as novas informações. A informação é alterada.
+\end{tabular}
+\end{center}
+\end{table}
+%---------------------------------------------------------------%
+
+\end{document}
