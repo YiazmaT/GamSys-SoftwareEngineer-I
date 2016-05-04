@@ -1,0 +1,216 @@
+\documentclass[12pt,onecolumn]{article}
+%\documentclass[conference]{IEEEtran}
+
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc} %acentos
+\usepackage{graphicx} %figuras
+\usepackage{latex8} %estilo
+\usepackage{tabto}
+\usepackage{verbatim} %comentário em bloco
+
+\title{
+Casos de Uso Expandido\\Sistema GamSys
+}
+\author{Eymar Ferrario de Lima - RA: 141257792\\Matheus Prachedes Batista RA: 141254793\\ 
+Departamento de Matemática e Computação -- Faculdade de Ciências e Tecnologia \\
+UNESP-Universidade Estadual Paulista ``Júlio de Mesquita Filho'' \\
+Presidente Prudente, SP - Brazil \\				
+eymarlima@gmail.com\\mortzion@hotmail.com
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle % insere título, faz ele aparecer
+
+%---------------------------------------------------------------%
+%1
+\newpage
+\section{Resumo:}
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Realizar login no Sistema}\\ \hline
+Atores: & Usuário Comum\\ \hline
+Finalidade: & Autenticar as informações do usuário e realizar o login no sistema\\ \hline
+Visão Geral: & O Usuário Comum entra com suas credencias. O sistema autentica as informações e libera o uso do sistema.\\ \hline
+Tipo: & Primário\\ \hline
+Referências Cruzadas: & Requisitos: R1.0, R1.1
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Sequência Típica de Eventos}
+\begin{center}
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+\textbf{Ação do Ator} & \textbf{Resposta do Sistema} \\ \hline
+\textbf{1. Usuário Comum introduz seu e-mail e sua senha} & \textbf{2. O Sistema verifica se o usuário está cadastrado no sistema}\\ \hline
+\textbf{} & \textbf{3. O Sistema recupera do servidor as informações básica do usuário (biblioteca de Softwares e Jogos e lista de amigos)}\\ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Sequências Alternativas:}
+\textbf{Linha 2: E-mail ou senha inválidos. Solicita que o Usuário Comum reintroduza os dados inválidos.}
+%---------------------------------------------------------------%
+
+
+%---------------------------------------------------------------%
+%2
+\newpage
+\section{Resumo:}
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Criar Conta de Usuário}\\ \hline
+Atores: & Usuário Comum\\ \hline
+Finalidade: & Criar a conta de um Usuário Comum e registra-la no sistema\\ \hline
+Visão Geral: & O usuário introduz os seus dados pessoais. O sistema valida a requisição e as informações inseridas. Por fim a conta do usuário comum é criada.\\ \hline
+Tipo: & Primário\\ \hline
+Referências Cruzadas: & Requisitos: R1.2
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Sequência Típica de Eventos}
+\begin{center}
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+\textbf{Ação do Ator} & \textbf{Resposta do Sistema} \\ \hline
+\textbf{1. Ao iniciar o sistema o Usuário Comum decide criar uma conta} & \textbf{}\\ \hline
+\textbf{2. O usuário introduz seus dados pessoais: Nome, CPF, e-mail, senha} & \textbf{3. O sistema verifica os dados e registra a conta}\\ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Sequências Alternativas:}
+\textbf{linha 3: }E-mail ou CPF já cadastrado. Solicita que o Usuário Comum reintroduza os dados inválidos.
+%---------------------------------------------------------------%
+
+
+%---------------------------------------------------------------%
+%3
+\newpage
+\section{Resumo:}
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Comprar Softwares e Jogos}\\ \hline
+Atores: & Usuário Comum\\ \hline
+Finalidade: & Adquirir novos Softwares e Jogos\\ \hline
+Visão Geral: & O Usuário adiciona ao carrinho de compra os Softwares que deseja comprar. O GamSys registra a compra e autentica o cartão utilizado. Os Softwares comprados são adicionados a biblioteca do Usuário.\\ \hline
+Tipo: & Primário\\ \hline
+Referências Cruzadas: & Requisitos: E2.0, E2.1, E2.2, E2.3, E2.4, E2.5, E2.6, E2.7, E2.8
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Sequência Típica de Eventos}
+\begin{center}
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+\textbf{Ação do Ator} & \textbf{Resposta do Sistema} \\ \hline
+\textbf{1. O Usuário Comum introduz os itens desejados no carrinho de compras} & \textbf{2. O Sistema calcula o valor total da compra e exibe para o Usuário Comum}\\ \hline
+\textbf{3. O Usuário Comum introduz as informações do cartão de crédito que irá utilizar no pagamento} & \textbf{4. O Sistema verifica as informações do cartão de crédito inseridas}\\ \hline
+\textbf{} & \textbf{5. A compra é realizada com sucesso e os Softwares e Jogos obtidos na compra são adicionados a biblioteca pessoal do Usuário Comum}\\ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Sequências Alternativas:}
+\textbf{Linha 4: Dados incorretos do cartão de crédito ou saldo insuficiente. Solicita que o Usuário Comum reintroduza os dados do cartão de crédito.}
+%---------------------------------------------------------------%
+
+
+%---------------------------------------------------------------%
+%4
+\newpage
+\section{Resumo:}
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Alterar Informações Pessoais do Usuário}\\ \hline
+Atores: & Usuário Comum\\ \hline
+Finalidade: & Corrigir uma informação pessoal do Usuário\\ \hline
+Visão Geral: & O Usuário Comum escolhe qual informação será alterada. Introduz a nova informação. A informação é alterada. \\ \hline
+Tipo: & Primário\\ \hline
+Referências Cruzadas:& Requisitos: R3.6
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Sequência Típica de Eventos}
+\begin{center}
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+\textbf{Ação do Ator} & \textbf{Resposta do Sistema} \\ \hline
+\textbf{1. O Usuário Comum acessa a funcionalidade para alteração de informações} & \textbf{}\\ \hline
+\textbf{2. O Usuário Comum introduz as novas informações que deseja alterar} & \textbf{3. O Sistema atualiza as informações do Usuário Comum}\\ \hline
+\end{tabular}
+\end{center}
+%---------------------------------------------------------------%
+
+
+%---------------------------------------------------------------%
+%5
+\newpage
+\section{Resumo:}
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Pesquisar Softwares e Jogos}\\ \hline
+Atores: & Usuário Comum\\ \hline
+Finalidade: & Ver Softwares presentes na loja, e suas informações.\\ \hline
+Visão Geral: & O Usuário Comum prequisa Softwares através de palavras chaves e consulta preços de Softwares presentes na loja. \\ \hline
+Tipo: & Primário\\ \hline
+Referências Cruzadas:& Requisitos: R2.0, R2.1, R2.2
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Sequência Típica de Eventos}
+\begin{center}
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+\textbf{Ação do Ator} & \textbf{Resposta do Sistema} \\ \hline
+\textbf{1. O Usuário Comum entra na funcionalidade da loja do sistema} & \textbf{}\\ \hline
+\textbf{2. O Usuário Comum introduz uma palava-chave} & \textbf{3. O Sistema busca os Softwares e Jogos que possuem relação com a palavra-chave e exibe os resultados encontrados}\\ \hline
+\textbf{4. O Usuário Comum pode selecionar um software para visualizar mais informações sobre o mesmo} & \textbf{}\\ \hline
+\end{tabular}
+\end{center}
+%---------------------------------------------------------------%
+
+
+%---------------------------------------------------------------%
+%6
+\newpage
+\section{Resumo:}
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9.5cm}}
+Caso de uso: & \textbf{Adicionar um Usuário}\\ \hline
+Atores: & Solicitante(Iniciador), Soliciatado \\ \hline
+Finalidade: & Adcionar um Usuário a lista de amigos\\ \hline
+Visão Geral: & O Solicitante envia um solicitação de amizade para o Solicitado utilizando uma identificação de usuário. O Solicitado aceita a solicitação. Um passa a pertencer a lista de amigos do outro. \\ \hline
+Tipo: & Primário\\ \hline
+Referências Cruzadas:& Requisitos: R3.0.
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Sequência Típica de Eventos}
+\begin{center}
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+\textbf{Ação do Ator} & \textbf{Resposta do Sistema} \\ \hline
+\textbf{1. O Solicitante acessa a funcionalidade de adicionar amigos e introduz a identificação única do Solicitado} & \textbf{2. O Sistema busca e exibe as informaçãoes do Solicitado}\\ \hline
+\textbf{3. O Solicitante envia a solicitação para o Solicitado} & \textbf{4. O Sistema envia uma notificação para o Solicitado}\\ \hline
+\textbf{5. O Solicitado aceita a solicitação de amizade} & \textbf{6. O sistema atualiza a informação da lista de amigos do Solicitado e do Solicitando}\\ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Sequências Alternativas:}
+\textbf{Linha 2: O sistema não encontra nenhum usuário com aquela identificação. Exibir um erro.}\\
+\textbf{Linha 5: O Solicitado não aceita a solicitação.}
+%---------------------------------------------------------------%
+
+
+\end{document}
