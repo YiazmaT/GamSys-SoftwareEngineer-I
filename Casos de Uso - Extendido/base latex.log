@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.18)  3 MAY 2016 21:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.18)  8 MAY 2016 23:07
 entering extended mode
 **base*latex.tex
 
@@ -210,23 +210,103 @@ Underfull \hbox (badness 10000) in paragraph at lines 194--194
  []
 
 [7]
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
+[]\OT1/cmr/m/n/12 Refer^encias
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 257--257
+[]\OT1/cmr/m/n/12 Refer^encias
+ []
+
+
+Underfull \hbox (badness 7273) in paragraph at lines 268--268
+[]\OT1/cmr/bx/n/12 3. O Sis-tema cria a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--275
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 289--289
+[]\OT1/cmr/m/n/12 Refer^encias
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--308
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 322--322
+[]\OT1/cmr/m/n/12 Refer^encias
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+[]\OT1/cmr/m/n/12 Refer^encias
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 379--379
+[]\OT1/cmr/m/n/12 Refer^encias
+ []
+
+
+Underfull \hbox (badness 1642) in paragraph at lines 389--389
+\OT1/cmr/bx/n/12 mu-ni-dade es-co-lhe uma in-
+ []
+
+
+Underfull \hbox (badness 7540) in paragraph at lines 389--389
+\OT1/cmr/bx/n/12 formac~ao a ser al-te-rada:
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 410--410
+[]\OT1/cmr/m/n/12 Refer^encias
+ []
+
+
+Underfull \hbox (badness 2111) in paragraph at lines 421--421
+\OT1/cmr/bx/n/12 a-rio Co-mum e ins-tala no
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 441--441
+[]\OT1/cmr/m/n/12 Refer^encias
+ []
+
+
+Underfull \hbox (badness 3323) in paragraph at lines 451--451
+\OT1/cmr/bx/n/12 a fun-ci-o-na-li-dade de atu-a-
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 471--471
+[]\OT1/cmr/m/n/12 Refer^encias
+ []
+
+[16]
 ("C:\Users\Eymar Lima\Dropbox\Faculdade\5º Semestre\ES 1\Projeto GamSys\Projet
 o-GamSys\Casos de Uso - Extendido\base latex.aux") ) 
 Here is how much of TeX's memory you used:
- 1580 strings out of 493921
- 21478 string characters out of 3147267
+ 1584 strings out of 493921
+ 21532 string characters out of 3147267
  78014 words of memory out of 3000000
- 4885 multiletter control sequences out of 15000+200000
+ 4889 multiletter control sequences out of 15000+200000
  10814 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,10n,24p,249b,285s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,10n,24p,263b,285s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.
 9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb>
-Output written on "base latex.pdf" (7 pages, 60989 bytes).
+Output written on "base latex.pdf" (16 pages, 76859 bytes).
 PDF statistics:
- 39 PDF objects out of 1000 (max. 8388607)
+ 67 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
