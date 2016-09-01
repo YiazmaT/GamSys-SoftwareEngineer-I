@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.18)  8 MAY 2016 23:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.18)  1 SEP 2016 11:09
 entering extended mode
 **base*latex.tex
 
 ("C:\Users\Eymar Lima\Dropbox\Faculdade\5º Semestre\ES 1\Projeto GamSys\Projet
-o-GamSys\Casos de Uso\base latex.tex"
+o-GamSys\Casos de Uso - Alto Nível\base latex.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -93,7 +93,7 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@width=\dimen105
 )
 ("C:\Users\Eymar Lima\Dropbox\Faculdade\5º Semestre\ES 1\Projeto GamSys\Projet
-o-GamSys\Casos de Uso\latex8.sty"
+o-GamSys\Casos de Uso - Alto Nível\latex8.sty"
 SEKE 8.5 x 11-Inch Proceedings Style `latex8.sty'.
 \@ctmp=\skip43
 \@figindent=\skip44
@@ -108,7 +108,7 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \verbatim@in@stream=\read1
 )
 ("C:\Users\Eymar Lima\Dropbox\Faculdade\5º Semestre\ES 1\Projeto GamSys\Projet
-o-GamSys\Casos de Uso\base latex.aux")
+o-GamSys\Casos de Uso - Alto Nível\base latex.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
@@ -194,19 +194,19 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4]
 ("C:\Users\Eymar Lima\Dropbox\Faculdade\5º Semestre\ES 1\Projeto GamSys\Projet
-o-GamSys\Casos de Uso\base latex.aux") ) 
+o-GamSys\Casos de Uso - Alto Nível\base latex.aux") ) 
 Here is how much of TeX's memory you used:
  1577 strings out of 493921
- 21338 string characters out of 3147267
- 94004 words of memory out of 3000000
+ 21464 string characters out of 3147267
+ 93004 words of memory out of 3000000
  4883 multiletter control sequences out of 15000+200000
  9400 words of font info for 31 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  27i,10n,24p,249b,283s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmr12.pfb>
-Output written on "base latex.pdf" (4 pages, 40528 bytes).
+<C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr12.pfb>
+Output written on "base latex.pdf" (4 pages, 40502 bytes).
 PDF statistics:
  23 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
