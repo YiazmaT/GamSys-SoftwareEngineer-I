@@ -7,5 +7,4 @@ public class Controlador {
         this.gamsys = gamsys;
     }
     
-    
 }
