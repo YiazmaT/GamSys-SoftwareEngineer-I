@@ -12,6 +12,7 @@ public class Usuario {
     private Biblioteca biblioteca;
     private Carrinho carrinho;
 
+    
     public Usuario(String nome, String senha, String email, String cpf, boolean isAdministrador) {
         this.nome = nome;
         this.senha = senha;
@@ -50,6 +51,12 @@ public class Usuario {
     }
     public void adicionarMensagemConversa(String mensagem, int idDestinatario, int idRemetente){
         //
+    }
+ 
+    public static Usuario buscarUsuario(String email, String senha){
+        //Fazer a busca na base de dados;
+        //-----------------------------------------------------TODO---------------------
+        return new Usuario("nullNome",senha,email,"nullCPF",false);
     }
     
 }

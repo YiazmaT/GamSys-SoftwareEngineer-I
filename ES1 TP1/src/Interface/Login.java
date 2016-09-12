@@ -182,9 +182,21 @@ public class Login extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-
-        this.pai.chamarMenuInicial();
-        this.pai.destravarMenus();
+        String login,senha;
+        
+        login = loginBox.getText();
+        senha = new String(senhaBox.getPassword());
+       
+        if(controlador.login(login,senha)){
+            this.pai.chamarMenuInicial();
+            this.pai.destravarMenus();
+        }else{
+            JOptionPane.showMessageDialog(null, "Login ou Senha Incorretos !!");
+            senhaBox.setText("");
+            senhaIncorreta();
+        }
+        
+        
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void senhaBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaBoxActionPerformed
