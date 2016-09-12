@@ -24,13 +24,14 @@ public class Main extends javax.swing.JFrame {
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         principal.setLayout(new GridLayout(1, 1));
+        this.controlador = new Controlador();
         
         this.chamarLogin();
     }
 
     public void chamarLogin(){
         principal.removeAll();
-        principal.add(new Login(this));
+        principal.add(new Login(this, this.controlador));
         principal.revalidate();
         principal.repaint();
     }

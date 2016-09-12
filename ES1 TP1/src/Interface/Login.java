@@ -5,6 +5,7 @@
  */
 package Interface;
 
+import Classes.Controlador;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.net.InetAddress;
@@ -20,11 +21,13 @@ import javax.swing.JOptionPane;
  */
 public class Login extends javax.swing.JPanel {
     private Main pai;
+    private Controlador controlador;
     /**
      * Creates new form Login
      */
-    public Login(Main pai) {
+    public Login(Main pai, Controlador controlador) {
         this.pai = pai;
+        this.controlador = controlador;
         initComponents();
         senhaBox.setEchoChar('*');
     }
@@ -173,20 +176,9 @@ public class Login extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        
-        String login = loginBox.getText();
-        String senha = senhaBox.getText();
-        
-        if(login.equals("root") && senha.equals("root")){
-            this.pai.setNomeUsuarioLogado(login);
-            this.pai.chamarMenuInicial();
-            this.pai.destravarMenus();
-        }
-        else{
-            loginBox.setText("");
-            senhaBox.setText("");
-            this.senhaIncorreta();
-        }
+
+        this.pai.chamarMenuInicial();
+        this.pai.destravarMenus();
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void senhaBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaBoxActionPerformed

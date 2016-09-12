@@ -4,9 +4,9 @@ public class GamSys {
     private Loja loja;
     private Usuario usuarioLogado;
 
-    public GamSys(Loja loja, Usuario usuarioLogado) {
-        this.loja = loja;
-        this.usuarioLogado = usuarioLogado;
+    public GamSys() {
+        this.loja = new Loja();
+        
     }
     public void adicionarAComunidade(int idComunidade, int idSolicitado){
         //
