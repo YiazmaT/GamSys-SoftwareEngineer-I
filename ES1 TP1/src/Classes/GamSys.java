@@ -59,4 +59,9 @@ public class GamSys {
     public void removerUsuarioComunidade(int idMembro, int idComunidade){
         //
     }
+    
+    public boolean fazerLogin(String email, String senha){
+        usuarioLogado = Usuario.buscarUsuario(email, senha);
+        return usuarioLogado != null;
+    }
 }

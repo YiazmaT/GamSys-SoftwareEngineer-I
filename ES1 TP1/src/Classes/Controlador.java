@@ -6,5 +6,9 @@ public class Controlador {
     public Controlador() {
         gamsys = new GamSys();
     }
+
+    public boolean login(String email, String senha) {
+        return gamsys.fazerLogin(email,senha);
+    }
     
 }
