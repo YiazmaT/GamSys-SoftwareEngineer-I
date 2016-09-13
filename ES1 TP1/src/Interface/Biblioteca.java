@@ -19,6 +19,7 @@ public class Biblioteca extends javax.swing.JPanel {
     private Classes.Biblioteca biblioteca;
     
     public Biblioteca(Controlador control, Main pai) {
+        initComponents();
         this.control = control;
         this.pai = pai;
         biblioteca = control.gamsys.getUsuarioLogado().getBiblioteca();

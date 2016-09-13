@@ -6,6 +6,7 @@
 package Interface;
 
 import Classes.Mensagem;
+import java.util.ArrayList;
 
 /**
  *
@@ -146,7 +147,7 @@ public class Chat extends javax.swing.JDialog {
     private javax.swing.JTextPane jTextPane2;
     // End of variables declaration//GEN-END:variables
 
-    void carregarConversa(Mensagem[] mensagem) {
+    void carregarConversa(ArrayList<Mensagem> mensagem) {
         // ------------------------- Carregar Mensagens
     }
 }
