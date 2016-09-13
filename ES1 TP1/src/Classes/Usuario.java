@@ -97,6 +97,10 @@ public class Usuario {
     void atualizarSoftware(int idSoftware) {
         biblioteca.baixarAtualizacao(idSoftware);
     }
+    
+    public Comunidade[] getComunidade(){
+        return comunidades;
+    }
 }
 
 

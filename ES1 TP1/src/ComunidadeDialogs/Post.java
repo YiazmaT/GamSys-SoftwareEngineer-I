@@ -14,8 +14,10 @@ public class Post extends javax.swing.JPanel {
     /**
      * Creates new form Post
      */
-    public Post() {
+    public Post(Classes.Post post) {
         initComponents();
+        jTextField1.setText(String.valueOf(post.getIdRemetente()));
+        jTextPane1.setText(post.getTexto());
     }
 
     /**

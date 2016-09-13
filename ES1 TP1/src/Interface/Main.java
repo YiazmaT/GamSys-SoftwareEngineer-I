@@ -31,24 +31,55 @@ public class Main extends javax.swing.JFrame {
         this.chamarLogin();
     }
 
+    public void setNomeUsuarioLogado(String nome){
+        this.usuarioLogado = nome;
+    }
+    
+    
+    //chamadas
     public void chamarLogin(){
         principal.removeAll();
         principal.add(new Login(this, this.controlador));
         principal.revalidate();
         principal.repaint();
-    }
-    
+    }    
     public void chamarMenuInicial(){
         principal.removeAll();
         principal.add(new MenuInicial(usuarioLogado));
         principal.revalidate();
         principal.repaint();
     }
-    
-    public void setNomeUsuarioLogado(String nome){
-        this.usuarioLogado = nome;
+    public void chamarBiblioteca(){
+        principal.removeAll();
+        principal.add(new Biblioteca(controlador, this));
+        principal.revalidate();
+        principal.repaint();
     }
-    
+    public void chamarComunidades(){
+        principal.removeAll();
+        principal.add(new Comunidade(this,controlador.gamsys.getUsuarioLogado()));
+        principal.revalidate();
+        principal.repaint();
+    }
+    public void chamarCarrinho(){
+        principal.removeAll();
+        principal.add(new Carrinho(this, controlador));
+        principal.revalidate();
+        principal.repaint();
+    }
+    public void chamarLoja(){
+        principal.removeAll();
+        principal.add(new Loja(this,controlador));
+        principal.revalidate();
+        principal.repaint();
+    }
+    public void chamarNovaConta() {
+        principal.removeAll();
+        principal.add(new NovaConta(this));
+        principal.revalidate();
+        principal.repaint();
+    }
+    //menus
     public void destravarMenus(){
         logoutMenu.setEnabled(true);
         inicioMenu.setEnabled(true);
@@ -61,6 +92,7 @@ public class Main extends javax.swing.JFrame {
         usuarioMenu.setEnabled(false);
         comprasMenu.setEnabled(false);
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -172,6 +204,11 @@ public class Main extends javax.swing.JFrame {
 
         jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/people.png"))); // NOI18N
         jMenuItem9.setText("Comunidades");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         usuarioMenu.add(jMenuItem9);
 
         jMenuBar1.add(usuarioMenu);
@@ -230,18 +267,15 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutMenuActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        // TODO add your handling code here:
+        this.chamarBiblioteca();
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        principal.removeAll();
-        principal.add(new Loja(this,controlador));
-        principal.revalidate();
-        principal.repaint();
+        this.chamarLoja();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        // TODO add your handling code here:
+        this.chamarCarrinho();
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
@@ -258,6 +292,10 @@ public class Main extends javax.swing.JFrame {
     private void inicioMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioMenuActionPerformed
         this.chamarMenuInicial();
     }//GEN-LAST:event_inicioMenuActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        this.chamarComunidades();
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -312,4 +350,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel principal;
     private javax.swing.JMenu usuarioMenu;
     // End of variables declaration//GEN-END:variables
+
+    
 }

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Biblioteca {
     private ArrayList<Software> softwares;
+    private Usuario usuariologado;
     
     public Biblioteca() {
-        //
     }
     
     public int getItemId(int posi){
