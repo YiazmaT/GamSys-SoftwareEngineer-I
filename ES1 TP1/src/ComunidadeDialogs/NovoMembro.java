@@ -6,6 +6,8 @@
 package ComunidadeDialogs;
 
 import Classes.GamSys;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -129,7 +131,15 @@ public class NovoMembro extends javax.swing.JDialog {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         int selectedRow = jTable1.getSelectedRow();
-        controlador.adicionarAComunidade(idComunidade, (int) ((DefaultTableModel)jTable1.getModel()).getValueAt(selectedRow, 1));
+        if(selectedRow < 0)
+        {
+            JOptionPane.showMessageDialog(null,"Selecione um Usuario");
+        }else
+        {
+            controlador.adicionarAComunidade(idComunidade,  Integer.valueOf((String)(((DefaultTableModel)jTable1.getModel()).getValueAt(selectedRow, 1))));
+            JOptionPane.showMessageDialog(null,"Usuario adcionado com sucesso");
+            this.dispose();
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

@@ -8,13 +8,23 @@ public class Comunidade {
     private String descricao;
     private Usuario [] membros;
     private ArrayList<Post> posts;
+    private int idComunidade;
     
-    public Comunidade(String nome, boolean tipo, String descricao) {
+    public Comunidade(String nome, boolean tipo, String descricao,int idComunidade) {
         this.nome = nome;
         this.tipo = tipo;
         this.descricao = descricao;
         this.membros = null;
         posts = new ArrayList<>();
+        this.idComunidade = idComunidade;
+    }
+
+    public int getIdComunidade() {
+        return idComunidade;
+    }
+
+    public void setIdComunidade(int idComunidade) {
+        this.idComunidade = idComunidade;
     }
 
     public String getNome() {

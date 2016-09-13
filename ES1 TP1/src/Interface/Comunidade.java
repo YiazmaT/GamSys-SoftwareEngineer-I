@@ -8,12 +8,12 @@ package Interface;
 import Classes.Post;
 import Classes.Usuario;
 import ComunidadeDialogs.AlterarInformacoesComunidade;
-import ComunidadeDialogs.Membros;
 import ComunidadeDialogs.NovaComunidade;
 import ComunidadeDialogs.NovoMembro;
 import ComunidadeDialogs.PesquisarComunidades;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
@@ -39,10 +39,10 @@ public class Comunidade extends javax.swing.JPanel {
         
         //---------------------Prototipo
         comunidades.clear();
-        comunidades.add(new Classes.Comunidade("comunidade1", true, "descrição1"));
-        comunidades.add(new Classes.Comunidade("comunidade2", true, "descrição2"));
-        comunidades.add(new Classes.Comunidade("comunidade3", true, "descrição3"));
-        comunidades.add(new Classes.Comunidade("comunidade4", true, "descrição4"));
+        comunidades.add(new Classes.Comunidade("comunidade1", true, "descrição1",1));
+        comunidades.add(new Classes.Comunidade("comunidade2", true, "descrição2",2));
+        comunidades.add(new Classes.Comunidade("comunidade3", true, "descrição3",3));
+        comunidades.add(new Classes.Comunidade("comunidade4", true, "descrição4",4));
         
         //---------------------Prototipo
         
@@ -367,13 +367,17 @@ public class Comunidade extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        Membros membros = new Membros(pai,false);
-        membros.setVisible(true);
-        membros.toFront();
+        
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        AlterarInformacoesComunidade alterar = new AlterarInformacoesComunidade(pai,false);
+        int idComunidade = jTable1.getSelectedRow();
+        if(idComunidade < 0 ){
+            JOptionPane.showMessageDialog(null,"Selecione uma comunidade");
+            return;
+        }
+        idComunidade = comunidades.get(idComunidade).getIdComunidade();
+        AlterarInformacoesComunidade alterar = new AlterarInformacoesComunidade(pai,false,pai.getGamSys(),idComunidade);
         alterar.setVisible(true);
         alterar.toFront();
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -391,7 +395,13 @@ public class Comunidade extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        NovoMembro novoMembro = new NovoMembro(pai,false);
+        int idComunidade = jTable1.getSelectedRow();
+        if(idComunidade < 0 ){
+            JOptionPane.showMessageDialog(null,"Selecione uma comunidade");
+            return;
+        }
+        idComunidade = comunidades.get(idComunidade).getIdComunidade();
+        NovoMembro novoMembro = new NovoMembro(pai,false,pai.getGamSys(),idComunidade);
         novoMembro.setVisible(true);
         novoMembro.toFront();
     }//GEN-LAST:event_jButton7ActionPerformed
