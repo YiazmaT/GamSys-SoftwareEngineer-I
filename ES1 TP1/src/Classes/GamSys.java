@@ -40,9 +40,7 @@ public class GamSys {
     public void introduzirProdutoCarrinho(int idProduto){
         //
     }
-    public void fazerPagamento(int numeroCartao){
-        //
-    }
+    
     public void criarComunidade(String nome, boolean tipo, String descricao, int idCriador){
         //
     }
@@ -72,5 +70,9 @@ public class GamSys {
     public boolean fazerLogin(String email, String senha){
         usuarioLogado = Usuario.buscarUsuario(email, senha);
         return usuarioLogado != null;
+    }
+
+    public void fazerPagamento(String numero, int codigoSeg, String nome) {
+        usuarioLogado.atualizarBiblioteca();
     }
 }

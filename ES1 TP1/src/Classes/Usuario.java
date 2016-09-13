@@ -50,8 +50,11 @@ public class Usuario {
         //    
     }
     public void atualizarBiblioteca(){
-        //
+        while(carrinho.possuiItens()){
+            biblioteca.atualizarBiblioteca(carrinho.getIdCarrinho());
+        }
     }
+    
     public void adicionarMensagemConversa(String mensagem, int idDestinatario, int idRemetente){
         //
     }
@@ -82,6 +85,11 @@ public class Usuario {
         // --------------------------------TODO
         return new Usuario("nullNome","nullSenha","nullLogin","nullCPF",false);
     }
+    
+    public Carrinho getCarrinho(){
+        return carrinho;
+    }
+    
 }
 
 

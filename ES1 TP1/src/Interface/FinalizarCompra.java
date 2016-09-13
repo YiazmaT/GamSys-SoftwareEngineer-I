@@ -11,12 +11,12 @@ package Interface;
  */
 public class FinalizarCompra extends javax.swing.JDialog {
 
-    /**
-     * Creates new form FinalizarCompra
-     */
-    public FinalizarCompra(java.awt.Frame parent, boolean modal) {
+    private Carrinho carrinho;
+    
+    public FinalizarCompra(java.awt.Frame parent, boolean modal,Interface.Carrinho carrinho) {
         super(parent, modal);
         initComponents();
+        this.carrinho = carrinho;
     }
 
     /**
@@ -39,6 +39,11 @@ public class FinalizarCompra extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Finalizar Compra");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -57,6 +62,11 @@ public class FinalizarCompra extends javax.swing.JDialog {
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/success.png"))); // NOI18N
         jButton1.setText("Finalizar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,6 +124,26 @@ public class FinalizarCompra extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String numero,nome;
+        int codigoSeg;
+        
+        numero = jTextField1.getText();
+        codigoSeg = Integer.parseInt(jTextField2.getText());
+        nome = jTextField3.getText();
+        
+        
+        carrinho.setVisible(true);
+        carrinho.setEnabled(true);
+        carrinho.fazerPagamento(numero,codigoSeg,nome);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        carrinho.setVisible(true);
+        carrinho.setEnabled(true);
+    }//GEN-LAST:event_formWindowClosed
+
     /**
      * @param args the command line arguments
      */
@@ -142,18 +172,7 @@ public class FinalizarCompra extends javax.swing.JDialog {
         //</editor-fold>
 
         /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                FinalizarCompra dialog = new FinalizarCompra(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

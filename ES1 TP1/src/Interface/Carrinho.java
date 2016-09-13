@@ -5,18 +5,30 @@
  */
 package Interface;
 
+import Classes.Controlador;
+import javax.swing.JDialog;
+
 /**
  *
  * @author Eymar Lima
  */
 public class Carrinho extends javax.swing.JPanel {
-
-    /**
-     * Creates new form Carrinho
-     */
-    public Carrinho() {
+    private Main pai;
+    private Controlador control;
+    private Classes.Carrinho carrinho;
+    private FinalizarCompra popup;
+    
+    public Carrinho(Main pai, Controlador control) {
         initComponents();
+        this.pai = pai;
+        this.control = control;
+        carrinho = control.gamsys.getUsuarioLogado().getCarrinho();
+        
+        //Adcionar os produtos do carrinho na interface
+        //----------------------------TODO--------------------------
+        
     }
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -73,6 +85,11 @@ public class Carrinho extends javax.swing.JPanel {
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dollar-symbol.png"))); // NOI18N
         jButton2.setText("Finalizar Compra");
         jButton2.setToolTipText("");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -136,7 +153,16 @@ public class Carrinho extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        popup = new FinalizarCompra(null,true,this);
+        popup.setVisible(true);
+        popup.toFront();
+        this.setEnabled(false);
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
+  
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -148,4 +174,9 @@ public class Carrinho extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+   
+    void fazerPagamento(String numero, int codigoSeg, String nome) {
+        control.gamsys.fazerPagamento(numero,codigoSeg,nome);
+    }
 }
