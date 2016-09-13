@@ -5,6 +5,8 @@
  */
 package Interface;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Eymar Lima
@@ -193,7 +195,16 @@ public class NovaConta extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField6ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String nome,senha,email,cpf;
         
+        nome = jTextField1.getText();
+        email = jTextField6.getText();
+        senha = jTextField5.getText();
+        cpf = jTextField2.getText();
+        
+        pai.getGamSys().criarConta(nome, email, senha, cpf);
+        
+        JOptionPane.showMessageDialog(null,"Conta criada com sucesso");
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
