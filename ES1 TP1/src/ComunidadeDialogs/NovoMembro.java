@@ -5,18 +5,32 @@
  */
 package ComunidadeDialogs;
 
+import Classes.GamSys;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Eymar Lima
  */
 public class NovoMembro extends javax.swing.JDialog {
-
-    /**
-     * Creates new form NovoMembro
-     */
-    public NovoMembro(java.awt.Frame parent, boolean modal) {
+    private GamSys controlador;
+    private int idComunidade;
+    
+    public NovoMembro(java.awt.Frame parent, boolean modal,GamSys controlador,int idComunidade) {
         super(parent, modal);
         initComponents();
+        this.controlador = controlador;
+        this.idComunidade = idComunidade;
+        String[] linha = new String[2];
+        
+        //----------------------------Prototipo--------------------------
+        for(int i=0;i<4;i++){
+            linha[0] = "Usuario" + (i+1);
+            linha[1] =String.valueOf( (i+1));
+            ((DefaultTableModel)jTable1.getModel()).addRow(linha);
+        }
+        //----------------------------Prototipo---------------------------
+        
     }
 
     /**
@@ -61,6 +75,11 @@ public class NovoMembro extends javax.swing.JDialog {
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/add-square-button.png"))); // NOI18N
         jButton2.setText("Adicionar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,6 +126,11 @@ public class NovoMembro extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int selectedRow = jTable1.getSelectedRow();
+        controlador.adicionarAComunidade(idComunidade, (int) ((DefaultTableModel)jTable1.getModel()).getValueAt(selectedRow, 1));
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
