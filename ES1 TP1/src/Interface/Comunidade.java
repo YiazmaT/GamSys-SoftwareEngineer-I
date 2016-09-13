@@ -10,6 +10,7 @@ import Classes.Usuario;
 import ComunidadeDialogs.AlterarInformacoesComunidade;
 import ComunidadeDialogs.Membros;
 import ComunidadeDialogs.NovaComunidade;
+import ComunidadeDialogs.PesquisarComunidades;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.event.ListSelectionEvent;
@@ -147,6 +148,11 @@ public class Comunidade extends javax.swing.JPanel {
         jLabel6.setText("Pesquisar Comunidades:");
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/magnifying-glass.png"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText("Alterar Informações:");
@@ -330,6 +336,12 @@ public class Comunidade extends javax.swing.JPanel {
         nova.setVisible(true);
         nova.toFront();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        PesquisarComunidades comunidades = new PesquisarComunidades(pai,false);
+        comunidades.setVisible(true);
+        comunidades.toFront();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

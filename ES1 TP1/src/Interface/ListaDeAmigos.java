@@ -104,7 +104,7 @@ public class ListaDeAmigos extends javax.swing.JPanel {
         });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Id do novo amigo:");
+        jLabel2.setText("Id novo amigo:");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,6 +113,11 @@ public class ListaDeAmigos extends javax.swing.JPanel {
         });
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/magnifying-glass.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -157,7 +162,7 @@ public class ListaDeAmigos extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(105, Short.MAX_VALUE)
+                .addContainerGap(116, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(106, 106, 106))
         );
@@ -166,7 +171,7 @@ public class ListaDeAmigos extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -178,6 +183,12 @@ public class ListaDeAmigos extends javax.swing.JPanel {
         int idUsuario = Integer.parseInt(jTextField1.getText());
         control.gamsys.adicionarUsuario(idUsuario, control.gamsys.getUsuarioLogado().getIdUsuario());
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        ProcurarAmigo amigo = new ProcurarAmigo(pai,false);
+        amigo.setVisible(true);
+        amigo.toFront();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
