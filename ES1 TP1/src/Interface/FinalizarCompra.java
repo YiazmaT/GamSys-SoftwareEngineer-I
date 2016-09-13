@@ -139,6 +139,8 @@ public class FinalizarCompra extends javax.swing.JDialog {
         carrinho.setEnabled(true);
         if(carrinho.fazerPagamento(numero,codigoSeg,nome) == true){
             JOptionPane.showMessageDialog(null,"Compra efetuada com sucesso");
+        }else{
+            JOptionPane.showMessageDialog(null,"Erro durante o pagamento");
         }
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

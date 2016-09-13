@@ -50,10 +50,13 @@ public class GamSys {
     }
     
     public void criarComunidade(String nome, boolean tipo, String descricao, int idCriador){
-        //
+        Comunidade novaComunidade = new Comunidade(nome, tipo, descricao, idCriador);
+        comunidades.add(novaComunidade);
     }
     public void criarConta(String nome, String email, String senha, String cpf){
-        //
+        Usuario novoUsuario = new Usuario(nome, senha, email, cpf, false);
+        //Armazenar usuario em meio persistente
+        //-------------------------------------Prototipo
     }
     public void enviarMensagem(int idDestinatario, int idRemetente, String mensagem){
         //

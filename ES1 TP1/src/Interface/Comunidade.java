@@ -383,7 +383,7 @@ public class Comunidade extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        NovaComunidade nova = new NovaComunidade(pai,false);
+        NovaComunidade nova = new NovaComunidade(pai,false,pai.getGamSys());
         nova.setVisible(true);
         nova.toFront();
     }//GEN-LAST:event_jButton3ActionPerformed

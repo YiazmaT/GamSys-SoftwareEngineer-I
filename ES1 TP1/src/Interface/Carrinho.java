@@ -202,7 +202,6 @@ public class Carrinho extends javax.swing.JPanel {
 
    
     boolean fazerPagamento(String numero, int codigoSeg, String nome) {
-        return control.fazerPagamento(numero,codigoSeg,nome);
-        
+        return control.fazerPagamento(numero,codigoSeg,nome); 
     }
 }
