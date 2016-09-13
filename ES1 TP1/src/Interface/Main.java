@@ -85,12 +85,14 @@ public class Main extends javax.swing.JFrame {
         inicioMenu.setEnabled(true);
         usuarioMenu.setEnabled(true);
         comprasMenu.setEnabled(true);
+        loginMenu.setEnabled(false);
     }
     public void travarMenus(){
         logoutMenu.setEnabled(false);
         inicioMenu.setEnabled(false);
         usuarioMenu.setEnabled(false);
         comprasMenu.setEnabled(false);
+        loginMenu.setEnabled(true);
     }
     
     /**
