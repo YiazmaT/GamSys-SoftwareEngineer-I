@@ -72,6 +72,7 @@ public class Main extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
@@ -134,6 +135,10 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem6);
+
+        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/people.png"))); // NOI18N
+        jMenuItem9.setText("Comunidades");
+        jMenu2.add(jMenuItem9);
 
         jMenuBar1.add(jMenu2);
 
@@ -246,6 +251,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel principal;
     // End of variables declaration//GEN-END:variables
 }
