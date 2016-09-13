@@ -5,17 +5,24 @@
  */
 package Interface;
 
+import Classes.Software;
+
 /**
  *
  * @author Eymar Lima
  */
 public class ItenLoja extends javax.swing.JPanel {
 
-    /**
-     * Creates new form ItenLoja
-     */
-    public ItenLoja() {
+    private Loja loja;
+    private Software software;
+    
+    public ItenLoja(Software software,Loja loja) {
         initComponents();
+        this.software = software;
+        
+        jTextField1.setText(software.getNome());
+        jTextField2.setText(String.valueOf(software.getPreco()));
+        jTextPane1.setText(software.getDescricao());
     }
 
     /**
@@ -57,6 +64,11 @@ public class ItenLoja extends javax.swing.JPanel {
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/add-circular-outlined-button.png"))); // NOI18N
         jButton1.setText("Adicionar ao Carrinho");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -106,6 +118,10 @@ public class ItenLoja extends javax.swing.JPanel {
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel1, jLabel2, jTextField1, jTextField2});
 
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        loja.adcionarItemCarrinho(software);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

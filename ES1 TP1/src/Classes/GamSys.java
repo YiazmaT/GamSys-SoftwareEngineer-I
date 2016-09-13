@@ -37,8 +37,8 @@ public class GamSys {
     public void downloadSoftware(int idSoftware){
         //
     }
-    public void introduzirProdutoCarrinho(int idProduto){
-        //
+    public void introduzirProdutoCarrinho(Software produto){
+        usuarioLogado.solicitarIntroducaoProdutoCarrinho(produto);
     }
     
     public void criarComunidade(String nome, boolean tipo, String descricao, int idCriador){
@@ -75,4 +75,7 @@ public class GamSys {
     public void fazerPagamento(String numero, int codigoSeg, String nome) {
         usuarioLogado.atualizarBiblioteca();
     }
+    
+    
+    
 }
