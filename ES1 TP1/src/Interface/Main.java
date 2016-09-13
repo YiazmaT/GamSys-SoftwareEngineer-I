@@ -37,6 +37,10 @@ public class Main extends javax.swing.JFrame {
     }
     
     
+    public GamSys getGamSys(){
+        return controlador;
+    }
+    
     //chamadas
     public void chamarLogin(){
         principal.removeAll();

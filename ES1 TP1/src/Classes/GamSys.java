@@ -1,15 +1,21 @@
 package Classes;
 
+import java.util.ArrayList;
+
 public class GamSys {
     private Loja loja;
     private Usuario usuarioLogado;
-
+    private ArrayList<Comunidade> comunidades;
+    
     public GamSys() {
         this.loja = new Loja();
-        
+        comunidades = new ArrayList<Comunidade>();
     }
     public void adicionarAComunidade(int idComunidade, int idSolicitado){
-        //
+        usuarioLogado.atualizarListaDeComunidades(idComunidade);
+        for(Comunidade a : comunidades){
+            if(a.getIdComunidade() == idComunidade)a.atualizaListaDeMembros(idSolicitado);
+        }
     }
     public void adicionarUsuario(int idSolicitado, int idSolicitante){
         Usuario novoUsuario = Usuario.buscarUsuario(idSolicitado);
@@ -23,7 +29,9 @@ public class GamSys {
         //
     }
     public void alterarDadosComunidade(String nome, boolean tipo, String descricao, int idComunidade){
-        //
+        for(Comunidade a : comunidades){
+            if(a.getIdComunidade() == idComunidade)a.atualizarDados(nome, tipo, descricao);
+        }
     }
     public void atualizarDadosUsuario(String nome, String email, String senha, String cpf){
         //
