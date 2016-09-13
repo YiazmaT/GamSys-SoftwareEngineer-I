@@ -71,6 +71,10 @@ public class Main extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("GamSys");
@@ -88,12 +92,15 @@ public class Main extends javax.swing.JFrame {
 
         jMenu1.setText("Iniciar");
 
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home.png"))); // NOI18N
         jMenuItem2.setText("Inicio");
         jMenu1.add(jMenuItem2);
 
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/loginin.png"))); // NOI18N
         jMenuItem3.setText("Login");
         jMenu1.add(jMenuItem3);
 
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logOut.png"))); // NOI18N
         jMenuItem4.setText("Logout");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +109,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem4);
 
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/exit.png"))); // NOI18N
         jMenuItem5.setText("Sair");
         jMenu1.add(jMenuItem5);
 
@@ -109,6 +117,7 @@ public class Main extends javax.swing.JFrame {
 
         jMenu2.setText("Usuário");
 
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/33.png"))); // NOI18N
         jMenuItem1.setText("Lista de Amigos");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,7 +126,33 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem1);
 
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/44.png"))); // NOI18N
+        jMenuItem6.setText("Biblioteca");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem6);
+
         jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Compras");
+
+        jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/store.png"))); // NOI18N
+        jMenuItem7.setText("Loja");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem7);
+
+        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/55.png"))); // NOI18N
+        jMenuItem8.setText("Carrinho");
+        jMenu3.add(jMenuItem8);
+
+        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -142,6 +177,14 @@ public class Main extends javax.swing.JFrame {
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,12 +224,16 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPanel principal;
     // End of variables declaration//GEN-END:variables
 }
