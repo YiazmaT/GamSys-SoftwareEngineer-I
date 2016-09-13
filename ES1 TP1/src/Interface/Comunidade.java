@@ -14,6 +14,7 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -22,7 +23,7 @@ import javax.swing.event.ListSelectionListener;
 public class Comunidade extends javax.swing.JPanel {
     private Main pai;
     private Usuario usuarioLogado;
-    private Classes.Comunidade[] comunidades;
+    private ArrayList<Classes.Comunidade> comunidades;
     /**
      * Creates new form Comunidade
      */
@@ -31,10 +32,27 @@ public class Comunidade extends javax.swing.JPanel {
         this.pai=pai;
         this.usuarioLogado = usuarioLogado;
         comunidades = usuarioLogado.getComunidade();
-        
         jPanel4.setLayout(new GridLayout(0,1));
         
-        comunidades = new Classes.Comunidade
+        
+        //---------------------Prototipo
+        comunidades.clear();
+        comunidades.add(new Classes.Comunidade("comunidade1", true, "descrição1"));
+        comunidades.add(new Classes.Comunidade("comunidade2", true, "descrição2"));
+        comunidades.add(new Classes.Comunidade("comunidade3", true, "descrição3"));
+        comunidades.add(new Classes.Comunidade("comunidade4", true, "descrição4"));
+        
+        //---------------------Prototipo
+        
+        String[] linhaTabela = new String[2];
+        for(int i=0;i<comunidades.size();i++){
+            linhaTabela[0] = comunidades.get(i).getNome();
+            linhaTabela[1] = comunidades.get(i).getDescricao();
+            
+            ((DefaultTableModel)jTable1.getModel()).addRow(linhaTabela);
+        }
+        
+        
         
         
         jTable1.getSelectionModel().addListSelectionListener(new ListSelectionListener(){
@@ -42,12 +60,20 @@ public class Comunidade extends javax.swing.JPanel {
                 int selectedRow = jTable1.getSelectedRow();
                 
                 jPanel4.removeAll();
-                ArrayList<Classes.Post> posts = comunidades[selectedRow].getPosts();
+                ArrayList<Classes.Post> posts = comunidades.get(selectedRow).getPosts();
+                
+                //----------------Prototipo
+                posts.clear();
+                for(int i=0;i<selectedRow;i++){
+                    posts.add(new Classes.Post("post" + (i+1), i+1));
+                }
+                //----------------Prototipo
                 
                 for(Post a : posts){
                     jPanel4.add(new ComunidadeDialogs.Post(a));
                 }
-                
+                jPanel4.revalidate();
+                jPanel4.repaint();
         }
                 
                 

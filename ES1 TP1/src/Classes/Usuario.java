@@ -1,5 +1,7 @@
 package Classes;
 
+import java.util.ArrayList;
+
 public class Usuario {
 
     
@@ -8,8 +10,8 @@ public class Usuario {
     private String email;
     private String cpf;
     private boolean isAdministrador;
-    private Mensagem [] mensagens;
-    private Comunidade [] comunidades;
+    private ArrayList<Classes.Mensagem> mensagens;
+    private ArrayList<Classes.Comunidade> comunidades;
     private ListaDeAmigos amigos;
     private Biblioteca biblioteca;
     private Carrinho carrinho;
@@ -25,9 +27,11 @@ public class Usuario {
         this.amigos = new ListaDeAmigos();
         this.biblioteca = new Biblioteca();
         this.carrinho = new Carrinho();
+        this.mensagens = new ArrayList<Mensagem>();
+        this.comunidades = new ArrayList<Comunidade>();
     }
 
-    public Usuario(String nome, String senha, String email, String cpf, boolean isAdministrador, ListaDeAmigos amigos, Biblioteca biblioteca, Carrinho carrinho, Mensagem [] mensagens, Comunidade [] comunidades) {
+    public Usuario(String nome, String senha, String email, String cpf, boolean isAdministrador, ListaDeAmigos amigos, Biblioteca biblioteca, Carrinho carrinho, ArrayList<Mensagem> mensagens, ArrayList<Comunidade> comunidades) {
         this.nome = nome;
         this.senha = senha;
         this.email = email;
@@ -63,7 +67,7 @@ public class Usuario {
         return this.amigos;
     }
     
-    public Mensagem[] getMensagem(){
+    public ArrayList<Mensagem> getMensagem(){
         return mensagens;
     }
     
@@ -98,7 +102,7 @@ public class Usuario {
         biblioteca.baixarAtualizacao(idSoftware);
     }
     
-    public Comunidade[] getComunidade(){
+    public ArrayList<Comunidade> getComunidade(){
         return comunidades;
     }
 }
