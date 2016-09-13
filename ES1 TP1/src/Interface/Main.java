@@ -7,6 +7,8 @@ package Interface;
 
 import Classes.Controlador;
 import java.awt.GridLayout;
+import static java.lang.System.exit;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,7 +27,7 @@ public class Main extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         principal.setLayout(new GridLayout(1, 1));
         this.controlador = new Controlador();
-        
+        this.travarMenus();
         this.chamarLogin();
     }
 
@@ -48,10 +50,16 @@ public class Main extends javax.swing.JFrame {
     }
     
     public void destravarMenus(){
-        
+        logoutMenu.setEnabled(true);
+        inicioMenu.setEnabled(true);
+        usuarioMenu.setEnabled(true);
+        comprasMenu.setEnabled(true);
     }
-    public void travarMebnus(){
-        
+    public void travarMenus(){
+        logoutMenu.setEnabled(false);
+        inicioMenu.setEnabled(false);
+        usuarioMenu.setEnabled(false);
+        comprasMenu.setEnabled(false);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -62,23 +70,29 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         principal = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        inicioMenu = new javax.swing.JMenuItem();
+        loginMenu = new javax.swing.JMenuItem();
+        logoutMenu = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        usuarioMenu = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        comprasMenu = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("GamSys");
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        principal.setOpaque(false);
 
         javax.swing.GroupLayout principalLayout = new javax.swing.GroupLayout(principal);
         principal.setLayout(principalLayout);
@@ -88,35 +102,55 @@ public class Main extends javax.swing.JFrame {
         );
         principalLayout.setVerticalGroup(
             principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 479, Short.MAX_VALUE)
+            .addGap(0, 480, Short.MAX_VALUE)
         );
+
+        jPanel1.add(principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 480));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background-1134468_960_720.jpg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 480));
 
         jMenu1.setText("Iniciar");
 
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home.png"))); // NOI18N
-        jMenuItem2.setText("Inicio");
-        jMenu1.add(jMenuItem2);
-
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/loginin.png"))); // NOI18N
-        jMenuItem3.setText("Login");
-        jMenu1.add(jMenuItem3);
-
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logOut.png"))); // NOI18N
-        jMenuItem4.setText("Logout");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        inicioMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home.png"))); // NOI18N
+        inicioMenu.setText("Inicio");
+        inicioMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                inicioMenuActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem4);
+        jMenu1.add(inicioMenu);
+
+        loginMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/loginin.png"))); // NOI18N
+        loginMenu.setText("Login");
+        loginMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginMenuActionPerformed(evt);
+            }
+        });
+        jMenu1.add(loginMenu);
+
+        logoutMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logOut.png"))); // NOI18N
+        logoutMenu.setText("Logout");
+        logoutMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutMenuActionPerformed(evt);
+            }
+        });
+        jMenu1.add(logoutMenu);
 
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/exit.png"))); // NOI18N
         jMenuItem5.setText("Sair");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem5);
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Usuário");
+        usuarioMenu.setText("Usuário");
 
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/33.png"))); // NOI18N
         jMenuItem1.setText("Lista de Amigos");
@@ -125,7 +159,7 @@ public class Main extends javax.swing.JFrame {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem1);
+        usuarioMenu.add(jMenuItem1);
 
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/44.png"))); // NOI18N
         jMenuItem6.setText("Biblioteca");
@@ -134,15 +168,15 @@ public class Main extends javax.swing.JFrame {
                 jMenuItem6ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem6);
+        usuarioMenu.add(jMenuItem6);
 
         jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/people.png"))); // NOI18N
         jMenuItem9.setText("Comunidades");
-        jMenu2.add(jMenuItem9);
+        usuarioMenu.add(jMenuItem9);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(usuarioMenu);
 
-        jMenu3.setText("Compras");
+        comprasMenu.setText("Compras");
 
         jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/store.png"))); // NOI18N
         jMenuItem7.setText("Loja");
@@ -151,7 +185,7 @@ public class Main extends javax.swing.JFrame {
                 jMenuItem7ActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem7);
+        comprasMenu.add(jMenuItem7);
 
         jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/55.png"))); // NOI18N
         jMenuItem8.setText("Carrinho");
@@ -160,9 +194,9 @@ public class Main extends javax.swing.JFrame {
                 jMenuItem8ActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem8);
+        comprasMenu.add(jMenuItem8);
 
-        jMenuBar1.add(jMenu3);
+        jMenuBar1.add(comprasMenu);
 
         setJMenuBar(jMenuBar1);
 
@@ -170,11 +204,11 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -187,9 +221,13 @@ public class Main extends javax.swing.JFrame {
         principal.repaint();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    private void logoutMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutMenuActionPerformed
+        int confirmation = JOptionPane.showConfirmDialog(null, "Deseja Realmente Fazer Logout?", "Logout", JOptionPane.YES_NO_OPTION);
+        if (confirmation == 0) {
+            this.travarMenus();
+            this.chamarLogin();
+        }
+    }//GEN-LAST:event_logoutMenuActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
@@ -205,6 +243,21 @@ public class Main extends javax.swing.JFrame {
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+       int confirmation = JOptionPane.showConfirmDialog(null, "Deseja Realmente Fechar o Sistema?", "Sair", JOptionPane.YES_NO_OPTION);
+        if (confirmation == 0) {
+            exit(0);
+        }
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void loginMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginMenuActionPerformed
+        this.chamarLogin();
+    }//GEN-LAST:event_loginMenuActionPerformed
+
+    private void inicioMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioMenuActionPerformed
+        this.chamarMenuInicial();
+    }//GEN-LAST:event_inicioMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,19 +295,21 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu comprasMenu;
+    private javax.swing.JMenuItem inicioMenu;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuItem loginMenu;
+    private javax.swing.JMenuItem logoutMenu;
     private javax.swing.JPanel principal;
+    private javax.swing.JMenu usuarioMenu;
     // End of variables declaration//GEN-END:variables
 }
