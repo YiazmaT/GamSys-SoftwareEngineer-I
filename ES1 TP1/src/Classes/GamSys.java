@@ -12,8 +12,13 @@ public class GamSys {
         //
     }
     public void adicionarUsuario(int idSolicitado, int idSolicitante){
-        //
+        Usuario novoUsuario = Usuario.buscarUsuario(idSolicitado);
+        
+        usuarioLogado.atualizarListaAmigos(idSolicitado);
+        novoUsuario.atualizarListaAmigos(idSolicitante);
     }
+    
+    
     public void atualizarListaAmigo(int idNovoAmigo){
         //
     }

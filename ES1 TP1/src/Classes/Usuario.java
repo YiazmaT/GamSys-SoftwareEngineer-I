@@ -1,6 +1,8 @@
 package Classes;
 
 public class Usuario {
+
+    
     private String nome;
     private String senha;
     private String email;
@@ -66,12 +68,20 @@ public class Usuario {
         return idUsuario;
     }
     
+    public void atualizarListaAmigos(int idNovoAmigo){
+        amigos.adicionarNovoAmigo(idNovoAmigo);
+    }
+    
     public static Usuario buscarUsuario(String email, String senha){
         //Fazer a busca na base de dados;
         //-----------------------------------------------------TODO---------------------
         return new Usuario("nullNome",senha,email,"nullCPF",false);
     }
-    
+    static Usuario buscarUsuario(int idSolicitado) {
+        //Facer a busca na base de dados;
+        // --------------------------------TODO
+        return new Usuario("nullNome","nullSenha","nullLogin","nullCPF",false);
+    }
 }
 
 
