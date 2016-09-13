@@ -49,7 +49,7 @@ public class ProcurarAmigo extends javax.swing.JDialog {
 
             },
             new String [] {
-                "Nome", "Id"
+                "Nome"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
