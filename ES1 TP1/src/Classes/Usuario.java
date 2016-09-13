@@ -46,8 +46,8 @@ public class Usuario {
     public void atualizarDados(String nome, String email, String senha, String cpf){
         //
     }
-    public void solicitarIntroducaoProdutoCarrinho(int idProduto){
-        //    
+    public void solicitarIntroducaoProdutoCarrinho(Software produto){
+        carrinho.adicionarProdutoCarrinho(produto);
     }
     public void atualizarBiblioteca(){
         while(carrinho.possuiItens()){
