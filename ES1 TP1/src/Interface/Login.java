@@ -5,7 +5,8 @@
  */
 package Interface;
 
-import Classes.Controlador;
+
+import Classes.GamSys;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.net.InetAddress;
@@ -21,11 +22,11 @@ import javax.swing.JOptionPane;
  */
 public class Login extends javax.swing.JPanel {
     private Main pai;
-    private Controlador controlador;
+    private GamSys controlador;
     /**
      * Creates new form Login
      */
-    public Login(Main pai, Controlador controlador) {
+    public Login(Main pai, GamSys controlador) {
         this.pai = pai;
         this.controlador = controlador;
         initComponents();
@@ -187,7 +188,7 @@ public class Login extends javax.swing.JPanel {
         login = loginBox.getText();
         senha = new String(senhaBox.getPassword());
        
-        if(controlador.login(login,senha)){
+        if(controlador.fazerLogin(login,senha)){
             this.pai.chamarMenuInicial();
             this.pai.destravarMenus();
         }else{

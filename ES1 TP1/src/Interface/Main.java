@@ -5,7 +5,8 @@
  */
 package Interface;
 
-import Classes.Controlador;
+
+import Classes.GamSys;
 import java.awt.GridLayout;
 import static java.lang.System.exit;
 import javax.swing.JOptionPane;
@@ -16,7 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class Main extends javax.swing.JFrame {
     private String usuarioLogado;
-    private Controlador controlador;
+    private GamSys controlador;
     /**
      * Creates new form Main
      */
@@ -26,7 +27,7 @@ public class Main extends javax.swing.JFrame {
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         principal.setLayout(new GridLayout(1, 1));
-        this.controlador = new Controlador();
+        this.controlador = new GamSys();
         this.travarMenus();
         this.chamarLogin();
     }
@@ -57,7 +58,7 @@ public class Main extends javax.swing.JFrame {
     }
     public void chamarComunidades(){
         principal.removeAll();
-        principal.add(new Comunidade(this,controlador.gamsys.getUsuarioLogado()));
+        principal.add(new Comunidade(this,controlador.getUsuarioLogado()));
         principal.revalidate();
         principal.repaint();
     }

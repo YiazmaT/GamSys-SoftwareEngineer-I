@@ -5,7 +5,7 @@
  */
 package Interface;
 
-import Classes.Controlador;
+import Classes.GamSys;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -16,15 +16,15 @@ import javax.swing.event.ListSelectionListener;
 public class ListaDeAmigos extends javax.swing.JPanel {
     private Classes.ListaDeAmigos lista;
     private Main pai;
-    private Controlador control;
+    private GamSys control;
     
-    public ListaDeAmigos(Main pai,Controlador control) {
+    public ListaDeAmigos(Main pai,GamSys control) {
         initComponents();
         this.pai = pai;
         this.control = control;
         jTable1.getSelectionModel().addListSelectionListener(new ListSelectionListener(){
         public void valueChanged(ListSelectionEvent event) {
-        lista = control.gamsys.getUsuarioLogado().getListaAmigos();
+        lista = control.getUsuarioLogado().getListaAmigos();
         
         
         //--------------------------------------------------------------------
@@ -40,7 +40,7 @@ public class ListaDeAmigos extends javax.swing.JPanel {
             Chat novoChat = new Chat(null,false);
             novoChat.setVisible(true);
             novoChat.toFront();
-            novoChat.carregarConversa(control.gamsys.getUsuarioLogado().getMensagem());
+            novoChat.carregarConversa(control.getUsuarioLogado().getMensagem());
         }
     });
         
@@ -181,7 +181,7 @@ public class ListaDeAmigos extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int idUsuario = Integer.parseInt(jTextField1.getText());
-        control.gamsys.adicionarUsuario(idUsuario, control.gamsys.getUsuarioLogado().getIdUsuario());
+        control.adicionarUsuario(idUsuario, control.getUsuarioLogado().getIdUsuario());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
