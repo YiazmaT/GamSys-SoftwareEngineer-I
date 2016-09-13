@@ -84,6 +84,12 @@ public class Main extends javax.swing.JFrame {
         principal.revalidate();
         principal.repaint();
     }
+    public void chamarModificarProduto(){
+        principal.removeAll();
+        principal.add(new ModificarProdutoLoja());
+        principal.revalidate();
+        principal.repaint();
+    }
     //menus
     public void destravarMenus(){
         logoutMenu.setEnabled(true);
@@ -91,6 +97,7 @@ public class Main extends javax.swing.JFrame {
         usuarioMenu.setEnabled(true);
         comprasMenu.setEnabled(true);
         loginMenu.setEnabled(false);
+        menuAdministrador.setEnabled(true);
     }
     public void travarMenus(){
         logoutMenu.setEnabled(false);
@@ -98,6 +105,7 @@ public class Main extends javax.swing.JFrame {
         usuarioMenu.setEnabled(false);
         comprasMenu.setEnabled(false);
         loginMenu.setEnabled(true);
+        menuAdministrador.setEnabled(false);
     }
     
     /**
@@ -125,6 +133,8 @@ public class Main extends javax.swing.JFrame {
         comprasMenu = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        menuAdministrador = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("GamSys");
@@ -242,6 +252,19 @@ public class Main extends javax.swing.JFrame {
 
         jMenuBar1.add(comprasMenu);
 
+        menuAdministrador.setText("Administrador");
+
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/99.png"))); // NOI18N
+        jMenuItem2.setText("Modificar Produto na Loja");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        menuAdministrador.add(jMenuItem2);
+
+        jMenuBar1.add(menuAdministrador);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -304,6 +327,10 @@ public class Main extends javax.swing.JFrame {
         this.chamarComunidades();
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        this.chamarModificarProduto();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -346,6 +373,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
@@ -354,6 +382,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem loginMenu;
     private javax.swing.JMenuItem logoutMenu;
+    private javax.swing.JMenu menuAdministrador;
     private javax.swing.JPanel principal;
     private javax.swing.JMenu usuarioMenu;
     // End of variables declaration//GEN-END:variables
