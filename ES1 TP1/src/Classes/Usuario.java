@@ -105,6 +105,10 @@ public class Usuario {
     public ArrayList<Comunidade> getComunidade(){
         return comunidades;
     }
+
+    void fazerDownloadSoftware(int idSoftware) {
+        biblioteca.fazerDownloadSoftware(idSoftware);
+    }
 }
 
 

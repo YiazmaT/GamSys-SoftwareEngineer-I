@@ -201,7 +201,8 @@ public class Carrinho extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
    
-    void fazerPagamento(String numero, int codigoSeg, String nome) {
-        control.fazerPagamento(numero,codigoSeg,nome);
+    boolean fazerPagamento(String numero, int codigoSeg, String nome) {
+        return control.fazerPagamento(numero,codigoSeg,nome);
+        
     }
 }

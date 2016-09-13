@@ -20,13 +20,21 @@ public class Biblioteca {
             if(a.getIdSoftware() == idSoftware){
                 if(a.possuiUpdate() == true){
                     a.baixarUpdate();
-                    a.marcarBaixado();
                     return;
                 }              
             }
         }
     }
     public void atualizarBiblioteca(int idNovoItem){
-        //
+    
+    }
+
+    void fazerDownloadSoftware(int idSoftware) {
+        for(Software a : softwares){
+            if(a.getIdSoftware() == idSoftware){
+                a.fazerDownloadSoftware();
+                a.marcarBaixado();
+            }
+        }
     }
 }

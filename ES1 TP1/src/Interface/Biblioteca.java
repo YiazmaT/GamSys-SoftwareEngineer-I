@@ -8,6 +8,7 @@ package Interface;
 
 import Classes.GamSys;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -25,8 +26,19 @@ public class Biblioteca extends javax.swing.JPanel {
         this.pai = pai;
         biblioteca = control.getUsuarioLogado().getBiblioteca();
         
+        String[] linha  = new String[2];
         
-        //-----------TODO adicionar os itens na biblioteca
+        //-------------------Prototipo------------
+        for(int i=0;i<4;i++){
+            linha[0] = "nome " + (i+1);
+            if(i%2 == 0){
+                linha[1] = "sim";
+            }else{
+                linha[1] = "não";
+            }
+            ((DefaultTableModel)jTable1.getModel()).addRow(linha);
+        }    
+        //--------------------Prototipo------------
     }
 
     /**
@@ -77,6 +89,11 @@ public class Biblioteca extends javax.swing.JPanel {
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/synchronization-arrows.png"))); // NOI18N
         jButton2.setText("Atualizar Software");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -127,15 +144,38 @@ public class Biblioteca extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int itenSelecionado;
-        itenSelecionado = jTable1.getSelectedRow();
-        if(itenSelecionado == -1){
-            JOptionPane.showMessageDialog(null, "Nenhum item selecionado\n");
+        int selectedRow = jTable1.getSelectedRow();
+        if(selectedRow < 0){
+            JOptionPane.showMessageDialog(null,"Selecione uma comunidade");
             return;
         }else{
-            control.atualizarSoftware(biblioteca.getItemId(itenSelecionado));
+            String status = (String) ((DefaultTableModel)jTable1.getModel()).getValueAt(selectedRow, 1);
+            if(status.contains("sim")){
+                JOptionPane.showMessageDialog(null,"Software já baixado");
+                return;
+            }
+            int idSoftware = biblioteca.getItemId(selectedRow);
+            this.control.downloadSoftware(idSoftware);
+            JOptionPane.showMessageDialog(null,"Software baixado");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int selectedRow = jTable1.getSelectedRow();
+        if(selectedRow < 0){
+            JOptionPane.showMessageDialog(null,"Selecione uma comunidade");
+            return;
+        }else{
+            String status = (String) ((DefaultTableModel)jTable1.getModel()).getValueAt(selectedRow, 1);
+            if(status.contains("não")){
+                JOptionPane.showMessageDialog(null,"Software ainda não baixado");
+                return;
+            }
+            int idSoftware = biblioteca.getItemId(selectedRow);
+            this.control.atualizarSoftware(idSoftware);
+            JOptionPane.showMessageDialog(null,"Software atualizado");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
