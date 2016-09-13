@@ -43,7 +43,7 @@ public class GamSys {
         usuarioLogado.atualizarSoftware(idSoftware);
     }
     public void downloadSoftware(int idSoftware){
-        //
+        usuarioLogado.fazerDownloadSoftware(idSoftware);
     }
     public void introduzirProdutoCarrinho(Software produto){
         usuarioLogado.solicitarIntroducaoProdutoCarrinho(produto);
@@ -80,8 +80,9 @@ public class GamSys {
         return usuarioLogado != null;
     }
 
-    public void fazerPagamento(String numero, int codigoSeg, String nome) {
+    public boolean fazerPagamento(String numero, int codigoSeg, String nome) {
         usuarioLogado.atualizarBiblioteca();
+        return true;//---------------------Prototipo
     }
     
     

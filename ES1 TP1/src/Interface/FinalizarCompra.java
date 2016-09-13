@@ -5,6 +5,8 @@
  */
 package Interface;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Eymar Lima
@@ -135,7 +137,9 @@ public class FinalizarCompra extends javax.swing.JDialog {
         
         carrinho.setVisible(true);
         carrinho.setEnabled(true);
-        carrinho.fazerPagamento(numero,codigoSeg,nome);
+        if(carrinho.fazerPagamento(numero,codigoSeg,nome) == true){
+            JOptionPane.showMessageDialog(null,"Compra efetuada com sucesso");
+        }
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
