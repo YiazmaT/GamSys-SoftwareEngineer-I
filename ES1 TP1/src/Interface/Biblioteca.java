@@ -5,7 +5,8 @@
  */
 package Interface;
 
-import Classes.Controlador;
+
+import Classes.GamSys;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,15 +15,15 @@ import javax.swing.JOptionPane;
  */
 public class Biblioteca extends javax.swing.JPanel {
 
-    private Controlador control;
+    private GamSys control;
     private Main pai;
     private Classes.Biblioteca biblioteca;
     
-    public Biblioteca(Controlador control, Main pai) {
+    public Biblioteca(GamSys control, Main pai) {
         initComponents();
         this.control = control;
         this.pai = pai;
-        biblioteca = control.gamsys.getUsuarioLogado().getBiblioteca();
+        biblioteca = control.getUsuarioLogado().getBiblioteca();
         
         
         //-----------TODO adicionar os itens na biblioteca
@@ -123,7 +124,7 @@ public class Biblioteca extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Nenhum item selecionado\n");
             return;
         }else{
-            control.gamsys.atualizarSoftware(biblioteca.getItemId(itenSelecionado));
+            control.atualizarSoftware(biblioteca.getItemId(itenSelecionado));
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

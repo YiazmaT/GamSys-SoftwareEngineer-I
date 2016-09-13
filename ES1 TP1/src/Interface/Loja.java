@@ -5,7 +5,8 @@
  */
 package Interface;
 
-import Classes.Controlador;
+
+import Classes.GamSys;
 import Classes.Software;
 import java.awt.GridLayout;
 import java.util.ArrayList;
@@ -17,9 +18,9 @@ import java.util.ArrayList;
 public class Loja extends javax.swing.JPanel {
     private ArrayList<Software> loja;
     private Main pai;
-    private Controlador control;
+    private GamSys control;
     
-    public Loja(Main pai,Controlador control) {
+    public Loja(Main pai,GamSys control) {
         initComponents();
         loja = new ArrayList<>();
         this.pai = pai;
@@ -161,7 +162,7 @@ public class Loja extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void adcionarItemCarrinho(Software software){
-        control.gamsys.introduzirProdutoCarrinho(software);
+        control.introduzirProdutoCarrinho(software);
     }
     
     

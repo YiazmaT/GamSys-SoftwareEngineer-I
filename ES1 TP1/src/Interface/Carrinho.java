@@ -5,7 +5,8 @@
  */
 package Interface;
 
-import Classes.Controlador;
+
+import Classes.GamSys;
 import javax.swing.JDialog;
 
 /**
@@ -14,15 +15,15 @@ import javax.swing.JDialog;
  */
 public class Carrinho extends javax.swing.JPanel {
     private Main pai;
-    private Controlador control;
+    private GamSys control;
     private Classes.Carrinho carrinho;
     private FinalizarCompra popup;
     
-    public Carrinho(Main pai, Controlador control) {
+    public Carrinho(Main pai, GamSys control) {
         initComponents();
         this.pai = pai;
         this.control = control;
-        carrinho = control.gamsys.getUsuarioLogado().getCarrinho();
+        carrinho = control.getUsuarioLogado().getCarrinho();
         
         //Adcionar os produtos do carrinho na interface
         //----------------------------TODO--------------------------
@@ -179,6 +180,6 @@ public class Carrinho extends javax.swing.JPanel {
 
    
     void fazerPagamento(String numero, int codigoSeg, String nome) {
-        control.gamsys.fazerPagamento(numero,codigoSeg,nome);
+        control.fazerPagamento(numero,codigoSeg,nome);
     }
 }
