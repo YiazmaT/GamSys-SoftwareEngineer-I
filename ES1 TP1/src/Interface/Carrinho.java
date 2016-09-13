@@ -8,6 +8,7 @@ package Interface;
 
 import Classes.GamSys;
 import javax.swing.JDialog;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -25,8 +26,16 @@ public class Carrinho extends javax.swing.JPanel {
         this.control = control;
         carrinho = control.getUsuarioLogado().getCarrinho();
         
+        String[] linha = new String[2];
+        
         //Adcionar os produtos do carrinho na interface
-        //----------------------------TODO--------------------------
+        //----------------------------Prototipo--------------------------
+        for(int i=0;i<4;i++){
+            linha[0] = "descrição " + (i+1);
+            linha[1] =String.valueOf( (float)(i+1)*10);
+            ((DefaultTableModel)jTable1.getModel()).addRow(linha);
+        }
+        //----------------------------Prototipo---------------------------
         
     }
   
@@ -81,6 +90,11 @@ public class Carrinho extends javax.swing.JPanel {
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/delete.png"))); // NOI18N
         jButton1.setText("Limpar Carrinho");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dollar-symbol.png"))); // NOI18N
@@ -163,6 +177,14 @@ public class Carrinho extends javax.swing.JPanel {
         this.setEnabled(false);
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
+        
+        while(dtm.getRowCount() >0){
+            dtm.removeRow(0);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
   
     
