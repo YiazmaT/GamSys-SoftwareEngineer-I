@@ -5,17 +5,26 @@
  */
 package Interface;
 
+import Classes.Controlador;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Eymar Lima
  */
 public class Biblioteca extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Biblioteca
-     */
-    public Biblioteca() {
-        initComponents();
+    private Controlador control;
+    private Main pai;
+    private Classes.Biblioteca biblioteca;
+    
+    public Biblioteca(Controlador control, Main pai) {
+        this.control = control;
+        this.pai = pai;
+        biblioteca = control.gamsys.getUsuarioLogado().getBiblioteca();
+        
+        
+        //-----------TODO adicionar os itens na biblioteca
     }
 
     /**
@@ -56,6 +65,11 @@ public class Biblioteca extends javax.swing.JPanel {
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/download.png"))); // NOI18N
         jButton1.setText("Baixar Software Selecionado");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -100,6 +114,17 @@ public class Biblioteca extends javax.swing.JPanel {
                 .addContainerGap(57, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int itenSelecionado;
+        itenSelecionado = jTable1.getSelectedRow();
+        if(itenSelecionado == -1){
+            JOptionPane.showMessageDialog(null, "Nenhum item selecionado\n");
+            return;
+        }else{
+            control.gamsys.atualizarSoftware(biblioteca.getItemId(itenSelecionado));
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

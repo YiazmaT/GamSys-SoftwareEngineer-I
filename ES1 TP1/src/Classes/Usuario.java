@@ -90,6 +90,13 @@ public class Usuario {
         return carrinho;
     }
     
+    public Biblioteca getBiblioteca(){
+        return biblioteca;
+    }
+
+    void atualizarSoftware(int idSoftware) {
+        biblioteca.baixarAtualizacao(idSoftware);
+    }
 }
 
 

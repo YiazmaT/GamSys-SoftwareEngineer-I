@@ -32,7 +32,7 @@ public class GamSys {
         //
     }
     public void atualizarSoftware(int idSoftware){
-        //
+        usuarioLogado.atualizarSoftware(idSoftware);
     }
     public void downloadSoftware(int idSoftware){
         //
