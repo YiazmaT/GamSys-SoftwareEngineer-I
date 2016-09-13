@@ -11,6 +11,7 @@ public class Usuario {
     private ListaDeAmigos amigos;
     private Biblioteca biblioteca;
     private Carrinho carrinho;
+    private int idUsuario;
 
     
     public Usuario(String nome, String senha, String email, String cpf, boolean isAdministrador) {
@@ -53,6 +54,18 @@ public class Usuario {
         //
     }
  
+    public ListaDeAmigos getListaAmigos(){
+        return this.amigos;
+    }
+    
+    public Mensagem[] getMensagem(){
+        return mensagens;
+    }
+    
+    public int getIdUsuario(){
+        return idUsuario;
+    }
+    
     public static Usuario buscarUsuario(String email, String senha){
         //Fazer a busca na base de dados;
         //-----------------------------------------------------TODO---------------------

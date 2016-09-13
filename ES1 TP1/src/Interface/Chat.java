@@ -5,6 +5,8 @@
  */
 package Interface;
 
+import Classes.Mensagem;
+
 /**
  *
  * @author Eymar Lima
@@ -143,4 +145,8 @@ public class Chat extends javax.swing.JDialog {
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JTextPane jTextPane2;
     // End of variables declaration//GEN-END:variables
+
+    void carregarConversa(Mensagem[] mensagem) {
+        // ------------------------- Carregar Mensagens
+    }
 }

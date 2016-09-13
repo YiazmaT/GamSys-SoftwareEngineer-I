@@ -60,6 +60,10 @@ public class GamSys {
         //
     }
     
+    public Usuario getUsuarioLogado(){
+        return usuarioLogado;
+    }
+    
     public boolean fazerLogin(String email, String senha){
         usuarioLogado = Usuario.buscarUsuario(email, senha);
         return usuarioLogado != null;

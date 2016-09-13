@@ -5,6 +5,7 @@
  */
 package Interface;
 
+import Classes.Controlador;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -13,16 +14,36 @@ import javax.swing.event.ListSelectionListener;
  * @author Eymar Lima
  */
 public class ListaDeAmigos extends javax.swing.JPanel {
-
-    /**
-     * Creates new form ListaDeAmigos
-     */
-    public ListaDeAmigos() {
+    private Classes.ListaDeAmigos lista;
+    private Main pai;
+    private Controlador control;
+    
+    public ListaDeAmigos(Main pai,Controlador control) {
         initComponents();
+        this.pai = pai;
+        this.control = control;
+        jTable1.getSelectionModel().addListSelectionListener(new ListSelectionListener(){
+        public void valueChanged(ListSelectionEvent event) {
+        lista = control.gamsys.getUsuarioLogado().getListaAmigos();
+        
+        
+        //--------------------------------------------------------------------
+        //--------------------------------------------------------------------
+        //---------------------Mostrar lista de amigos------------------------
+        //--------------------------------------------------------------------
+        //--------------------------------------------------------------------
+        
+       
         
         jTable1.getSelectionModel().addListSelectionListener(new ListSelectionListener(){
         public void valueChanged(ListSelectionEvent event) {
-
+            Chat novoChat = new Chat(null,false);
+            novoChat.setVisible(true);
+            novoChat.toFront();
+            novoChat.carregarConversa(control.gamsys.getUsuarioLogado().getMensagem());
+        }
+    });
+        
         }
     });
     }
@@ -57,17 +78,30 @@ public class ListaDeAmigos extends javax.swing.JPanel {
         jTable1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {"Teste1"}
             },
             new String [] {
                 "Nome"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icon.png"))); // NOI18N
         jButton1.setText("Adicionar Amigo");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Id do novo amigo:");
@@ -139,6 +173,11 @@ public class ListaDeAmigos extends javax.swing.JPanel {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int idUsuario = Integer.parseInt(jTextField1.getText());
+        control.gamsys.adicionarUsuario(idUsuario, control.gamsys.getUsuarioLogado().getIdUsuario());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

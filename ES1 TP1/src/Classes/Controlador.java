@@ -1,7 +1,7 @@
 package Classes;
 
 public class Controlador {
-    private GamSys gamsys;
+    public GamSys gamsys;
 
     public Controlador() {
         gamsys = new GamSys();
