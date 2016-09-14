@@ -86,6 +86,12 @@ public class Main extends javax.swing.JFrame {
         principal.revalidate();
         principal.repaint();
     }
+    public void chamarTrocarInformacoes(){
+        principal.removeAll();
+        principal.add(new AlterarInformacoesPessoais(controlador));
+        principal.revalidate();
+        principal.repaint();
+    }
     //menus
     public void destravarMenus(){
         logoutMenu.setEnabled(true);
@@ -124,6 +130,7 @@ public class Main extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         comprasMenu = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
@@ -220,6 +227,15 @@ public class Main extends javax.swing.JFrame {
         });
         usuarioMenu.add(jMenuItem9);
 
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/99.png"))); // NOI18N
+        jMenuItem2.setText("Alterar Informações Pessoais");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        usuarioMenu.add(jMenuItem2);
+
         jMenuBar1.add(usuarioMenu);
 
         comprasMenu.setText("Compras");
@@ -306,6 +322,10 @@ public class Main extends javax.swing.JFrame {
         this.chamarComunidades();
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        this.chamarTrocarInformacoes();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -348,6 +368,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
