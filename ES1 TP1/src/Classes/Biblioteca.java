@@ -7,10 +7,14 @@ public class Biblioteca {
     private Usuario usuariologado;
     
     public Biblioteca() {
+        softwares = new ArrayList<Software>(); 
     }
     
     public int getItemId(int posi){
-        return softwares.get(posi).getIdSoftware();
+        if(posi<softwares.size()){
+            return softwares.get(posi).getIdSoftware();
+        }
+        else return -1;
     }
     
     public void baixarAtualizacao(int idSoftware){

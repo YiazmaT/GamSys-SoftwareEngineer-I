@@ -205,6 +205,7 @@ public class NovaConta extends javax.swing.JPanel {
         pai.getGamSys().criarConta(nome, email, senha, cpf);
         
         JOptionPane.showMessageDialog(null,"Conta criada com sucesso");
+        pai.chamarLogin();
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

@@ -23,12 +23,11 @@ public class NovoMembro extends javax.swing.JDialog {
         initComponents();
         this.controlador = controlador;
         this.idComunidade = idComunidade;
-        String[] linha = new String[2];
+        String[] linha = new String[1];
         
         //----------------------------Prototipo--------------------------
         for(int i=0;i<4;i++){
             linha[0] = "Usuario" + (i+1);
-            linha[1] =String.valueOf( (i+1));
             ((DefaultTableModel)jTable1.getModel()).addRow(linha);
         }
         //----------------------------Prototipo---------------------------
@@ -64,7 +63,7 @@ public class NovoMembro extends javax.swing.JDialog {
 
             },
             new String [] {
-                "Nome", "Id"
+                "Nome"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -133,11 +132,11 @@ public class NovoMembro extends javax.swing.JDialog {
         int selectedRow = jTable1.getSelectedRow();
         if(selectedRow < 0)
         {
-            JOptionPane.showMessageDialog(null,"Selecione um Usuario");
+            JOptionPane.showMessageDialog(null,"Selecione um Usuário");
         }else
         {
             controlador.adicionarAComunidade(idComunidade,  Integer.valueOf((String)(((DefaultTableModel)jTable1.getModel()).getValueAt(selectedRow, 1))));
-            JOptionPane.showMessageDialog(null,"Usuario adcionado com sucesso");
+            JOptionPane.showMessageDialog(null,"Usuario adicionado com sucesso");
             this.dispose();
         }
     }//GEN-LAST:event_jButton2ActionPerformed

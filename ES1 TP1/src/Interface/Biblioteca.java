@@ -154,9 +154,14 @@ public class Biblioteca extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null,"Software já baixado");
                 return;
             }
-            int idSoftware = biblioteca.getItemId(selectedRow);
-            this.control.downloadSoftware(idSoftware);
-            JOptionPane.showMessageDialog(null,"Software baixado");
+            else{
+                int idSoftware = biblioteca.getItemId(selectedRow);
+                this.control.downloadSoftware(idSoftware);
+                JOptionPane.showMessageDialog(null,"Software baixado");
+                
+                
+            }
+            
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

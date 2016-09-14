@@ -6,8 +6,10 @@
 package Interface;
 
 import Classes.GamSys;
+import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -50,7 +52,11 @@ public class ListaDeAmigos extends javax.swing.JPanel {
         }
     });
     }
-
+    
+    public void alterarNomeTextField(String nome){
+        jTextField1.setText(nome);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -183,12 +189,14 @@ public class ListaDeAmigos extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int idUsuario = Integer.parseInt(jTextField1.getText());
+
+        int idUsuario = control.buscaUsuarioNome(jTextField1.getText());
         control.adicionarUsuario(idUsuario, control.getUsuarioLogado().getIdUsuario());
+        JOptionPane.showMessageDialog(null, "Usuário adicionado com sucesso");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        ProcurarAmigo amigo = new ProcurarAmigo(pai,false);
+        ProcurarAmigo amigo = new ProcurarAmigo(pai,false,this);
         amigo.setVisible(true);
         amigo.toFront();
     }//GEN-LAST:event_jButton2ActionPerformed

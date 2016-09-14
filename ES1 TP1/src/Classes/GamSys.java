@@ -99,6 +99,10 @@ public class GamSys {
         }
     }
     
-    
+    public int buscaUsuarioNome(String nome){
+        int id=0;
+        //
+        return id;
+    }
     
 }

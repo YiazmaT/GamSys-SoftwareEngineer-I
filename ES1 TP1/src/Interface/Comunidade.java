@@ -8,6 +8,7 @@ package Interface;
 import Classes.Post;
 import Classes.Usuario;
 import ComunidadeDialogs.AlterarInformacoesComunidade;
+import ComunidadeDialogs.Membros;
 import ComunidadeDialogs.NovaComunidade;
 import ComunidadeDialogs.NovoMembro;
 import ComunidadeDialogs.PesquisarComunidades;
@@ -372,7 +373,15 @@ public class Comunidade extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        
+        int idComunidade = jTable1.getSelectedRow();
+        if(idComunidade < 0 ){
+            JOptionPane.showMessageDialog(null,"Selecione uma comunidade");
+            return;
+        }
+        idComunidade = comunidades.get(idComunidade).getIdComunidade();
+        Membros alterar = new Membros(pai,false,pai.getGamSys(),idComunidade);
+        alterar.setVisible(true);
+        alterar.toFront();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
