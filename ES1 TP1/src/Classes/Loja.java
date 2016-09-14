@@ -1,7 +1,9 @@
 package Classes;
 
+import java.util.ArrayList;
+
 public class Loja {
-    private Software [] softwares;
+    private ArrayList<Software> softwares;
 
     public Loja() {
         this.carregarProdutos();
@@ -12,9 +14,11 @@ public class Loja {
     public void carregarProdutos(){
         //
     }
-    public int [] localizarProdutos(String nome){
-        int [] localizados = null;
-        //
-        return localizados;
+    public ArrayList<Software> localizarProdutos(String nome){
+        ArrayList<Software> produtosEncontrados = new ArrayList<Software>();
+        for(Software a: softwares){
+            if(a.getNome().contains(nome))produtosEncontrados.add(a);
+        }
+        return produtosEncontrados;
     }
 }

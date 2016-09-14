@@ -300,6 +300,11 @@ public class Comunidade extends javax.swing.JPanel {
         jScrollPane3.setViewportView(jTextPane1);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/paper-plane.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Últimas Postagens:");
@@ -405,6 +410,23 @@ public class Comunidade extends javax.swing.JPanel {
         novoMembro.setVisible(true);
         novoMembro.toFront();
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int idComunidade = jTable1.getSelectedRow();
+        if(idComunidade < 0 ){
+            JOptionPane.showMessageDialog(null,"Selecione uma comunidade");
+            return;
+        }
+        idComunidade = comunidades.get(idComunidade).getIdComunidade();
+        String texto = jTextPane1.getText();
+        int remetente = pai.getGamSys().getUsuarioLogado().getIdUsuario();
+        
+        pai.getGamSys().criarNovoPost(idComunidade,texto,remetente);
+        
+        jPanel4.add(new ComunidadeDialogs.Post(new Post(texto,remetente)));
+        jPanel4.revalidate();
+        jPanel4.repaint();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -34,26 +34,16 @@ public class Loja extends javax.swing.JPanel {
         
         jPanel2.setLayout(new GridLayout(0,1));
         
-        busca(null);
+        imprimir(loja);
         
         this.revalidate();
         this.repaint();
     }
 
-    private void busca(String palavrachave){
+    private void imprimir(ArrayList<Software> produtos){
         jPanel2.removeAll();
-        ArrayList<Software> busca = new ArrayList<Software>();
         
-        if(palavrachave == null)busca = loja;
-        else if(palavrachave.equals(""))busca = loja;
-        else{
-            for(Software a : loja){
-                if(a.getNome().contains(palavrachave))busca.add(a);
-            }
-        }
-        
-        for(int i =0;i<busca.size();i++){
-            Software a = busca.get(i);
+        for(Software a : produtos){
             jPanel2.add(new ItenLoja(a,this));
         }
         this.revalidate();
@@ -158,7 +148,14 @@ public class Loja extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String busca = jTextField1.getText();
-        this.busca(busca);
+        if(busca.equalsIgnoreCase("")){
+            imprimir(loja);
+            return;
+        }
+        ArrayList<Software> produtosEncontrados = control.procurarProduto(busca);
+        imprimir(produtosEncontrados);
+        return;
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void adcionarItemCarrinho(Software software){

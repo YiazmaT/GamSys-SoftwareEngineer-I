@@ -75,7 +75,7 @@ public class Comunidade {
         //
     }
     public void criarNovoPost(int idRemetente, String texto){
-        //
+        posts.add(new Post(texto, idRemetente));
     }
     public void removerMembro(int idMembro){
         //
