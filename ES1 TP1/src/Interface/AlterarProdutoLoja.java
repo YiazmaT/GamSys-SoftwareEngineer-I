@@ -14,13 +14,15 @@ import javax.swing.JOptionPane;
  */
 public class AlterarProdutoLoja extends javax.swing.JDialog {
     private GamSys controlador;
+    private ItenLoja loja;
     /**
      * Creates new form NewJDialog
      */
-    public AlterarProdutoLoja(java.awt.Frame parent, boolean modal,GamSys controlador) {
+    public AlterarProdutoLoja(java.awt.Frame parent, boolean modal,GamSys controlador,ItenLoja loja) {
         super(parent, modal);
         initComponents();
         this.controlador = controlador;
+        this.loja = loja;
     }
 
     /**
@@ -153,7 +155,7 @@ public class AlterarProdutoLoja extends javax.swing.JDialog {
         int valor = Integer.parseInt(jTextField3.getText());
         String descricao = jTextPane1.getText();
         
-        controlador.alteraProdutoLoja(nome, descricao, valor);
+        loja.alteraProdutoLoja(nome, descricao, valor);
         JOptionPane.showMessageDialog(null,"Informações alteradas com sucesso");
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -184,7 +186,7 @@ public class AlterarProdutoLoja extends javax.swing.JDialog {
         }
         //</editor-fold>
         //</editor-fold>
-
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

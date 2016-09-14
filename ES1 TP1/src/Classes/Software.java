@@ -69,6 +69,12 @@ public class Software {
     public void setBaixado(boolean baixado) {
         this.baixado = baixado;
     }
+
+    void alteraInformacoes(String nome, String descricao, float valor) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.preco = valor;
+    }
     
     
 }

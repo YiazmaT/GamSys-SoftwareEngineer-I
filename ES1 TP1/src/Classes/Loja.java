@@ -11,7 +11,7 @@ public class Loja {
     }
     public void alterarInformacoesProduto(String nome, String descricao, int idSoftware, float valor){
         for(Software a: softwares){
-            if(a.getIdSoftware() == idSoftware) a.alteraInformacoes();
+            if(a.getIdSoftware() == idSoftware) a.alteraInformacoes(nome,descricao,valor);
         }
     }
     public void carregarProdutos(){

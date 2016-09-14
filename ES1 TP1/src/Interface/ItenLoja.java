@@ -146,7 +146,7 @@ public class ItenLoja extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        AlterarProdutoLoja produto = new AlterarProdutoLoja(null,false,controlador);
+        AlterarProdutoLoja produto = new AlterarProdutoLoja(null,false,controlador,this);
         produto.setVisible(true);
         produto.toFront();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -163,4 +163,8 @@ public class ItenLoja extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
+
+    void alteraProdutoLoja(String nome, String descricao, int valor) {
+        controlador.alteraProdutoLoja(nome, descricao, software.getIdSoftware(), valor);
+    }
 }
