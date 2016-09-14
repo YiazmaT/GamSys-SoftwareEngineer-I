@@ -37,7 +37,10 @@ public class ListaDeAmigos extends javax.swing.JPanel {
         
         jTable1.getSelectionModel().addListSelectionListener(new ListSelectionListener(){
         public void valueChanged(ListSelectionEvent event) {
-            Chat novoChat = new Chat(null,false);
+            int selectedRow = jTable1.getSelectedRow();
+            
+            Chat novoChat;
+            novoChat = new Chat(null,false,pai.getGamSys().getUsuarioLogado().getListaAmigos().getAmigo(selectedRow),control);
             novoChat.setVisible(true);
             novoChat.toFront();
             novoChat.carregarConversa(control.getUsuarioLogado().getMensagem());

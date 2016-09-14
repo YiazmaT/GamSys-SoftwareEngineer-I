@@ -5,6 +5,7 @@
  */
 package Interface;
 
+import Classes.GamSys;
 import Classes.Mensagem;
 import java.util.ArrayList;
 
@@ -14,12 +15,14 @@ import java.util.ArrayList;
  */
 public class Chat extends javax.swing.JDialog {
 
-    /**
-     * Creates new form Chat
-     */
-    public Chat(java.awt.Frame parent, boolean modal) {
+    private int idAmigo;
+    private GamSys control;
+    
+    public Chat(java.awt.Frame parent, boolean modal,int idAmigo,GamSys control) {
         super(parent, modal);
         initComponents();
+        this.idAmigo = idAmigo;
+        this.control = control;
     }
 
     /**
@@ -55,6 +58,11 @@ public class Chat extends javax.swing.JDialog {
         jLabel2.setText("Enviar Mensagem:");
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/paper-plane.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,47 +103,14 @@ public class Chat extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Chat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Chat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Chat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Chat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String mensagem = jTextPane2.getText();
+        control.enviarMensagem(idAmigo, control.getUsuarioLogado().getIdUsuario(), mensagem);
+        
+        jTextPane1.setText(jTextPane1.getText() + "\n" + control.getUsuarioLogado().getNome() + " : " + mensagem);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                Chat dialog = new Chat(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

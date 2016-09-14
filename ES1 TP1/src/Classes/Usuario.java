@@ -60,7 +60,8 @@ public class Usuario {
     }
     
     public void adicionarMensagemConversa(String mensagem, int idDestinatario, int idRemetente){
-        //
+        Mensagem novaMensagem = new Mensagem(mensagem, idRemetente, idDestinatario);
+        mensagens.add(novaMensagem);
     }
  
     public ListaDeAmigos getListaAmigos(){
@@ -108,6 +109,10 @@ public class Usuario {
 
     void fazerDownloadSoftware(int idSoftware) {
         biblioteca.fazerDownloadSoftware(idSoftware);
+    }
+
+    public String getNome() {
+        return nome;
     }
 }
 

@@ -59,10 +59,15 @@ public class GamSys {
         //-------------------------------------Prototipo
     }
     public void enviarMensagem(int idDestinatario, int idRemetente, String mensagem){
-        //
+        Usuario destino;
+        
+        destino = Usuario.buscarUsuario(idDestinatario);
+        
+        usuarioLogado.adicionarMensagemConversa(mensagem, idDestinatario, idRemetente);
+        destino.adicionarMensagemConversa(mensagem, idDestinatario, idRemetente);
     }
-    public void procurarProduto(String nome){
-        //
+    public ArrayList<Software> procurarProduto(String nome){
+        return loja.localizarProdutos(nome);
     }
     public void enviarMensagemComunidade(int idComunidade, int idRemetente, String texto){
         //
@@ -86,6 +91,12 @@ public class GamSys {
     public boolean fazerPagamento(String numero, int codigoSeg, String nome) {
         usuarioLogado.atualizarBiblioteca();
         return true;//---------------------Prototipo
+    }
+
+    public void criarNovoPost(int idComunidade, String texto, int remetente) {
+        if(idComunidade < comunidades.size()){
+            comunidades.get(idComunidade).criarNovoPost(remetente, texto);
+        }
     }
     
     
