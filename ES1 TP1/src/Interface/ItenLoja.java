@@ -16,13 +16,16 @@ public class ItenLoja extends javax.swing.JPanel {
     private Loja loja;
     private Software software;
     
-    public ItenLoja(Software software,Loja loja) {
+    public ItenLoja(Software software,Loja loja,boolean isAdmin) {
         initComponents();
         this.software = software;
         
         jTextField1.setText(software.getNome());
         jTextField2.setText(String.valueOf(software.getPreco()));
         jTextPane1.setText(software.getDescricao());
+        
+        if(!isAdmin)jButton2.setVisible(false);
+        
     }
 
     /**

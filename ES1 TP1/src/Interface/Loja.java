@@ -44,7 +44,7 @@ public class Loja extends javax.swing.JPanel {
         jPanel2.removeAll();
         
         for(Software a : produtos){
-            jPanel2.add(new ItenLoja(a,this));
+            jPanel2.add(new ItenLoja(a,this,control.getUsuarioLogado().isAdmin()));
         }
         this.revalidate();
         this.repaint();
