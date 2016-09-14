@@ -6,7 +6,7 @@ public class Carrinho {
     private float total;
     private ArrayList<Software> itens;
     public Carrinho() {
-        //
+        itens = new ArrayList<Software>();
     }
     
     public void adicionarProdutoCarrinho(Software produto){

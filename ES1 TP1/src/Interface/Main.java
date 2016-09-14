@@ -30,6 +30,7 @@ public class Main extends javax.swing.JFrame {
         this.controlador = new GamSys();
         this.travarMenus();
         this.chamarLogin();
+        
     }
 
     public void setNomeUsuarioLogado(String nome){
@@ -49,6 +50,7 @@ public class Main extends javax.swing.JFrame {
         principal.repaint();
     }    
     public void chamarMenuInicial(){
+        usuarioLogado = controlador.getUsuarioLogado().getNome();
         principal.removeAll();
         principal.add(new MenuInicial(usuarioLogado));
         principal.revalidate();

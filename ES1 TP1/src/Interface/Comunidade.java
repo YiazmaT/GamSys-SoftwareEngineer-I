@@ -378,8 +378,8 @@ public class Comunidade extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Selecione uma comunidade");
             return;
         }
-        idComunidade = comunidades.get(idComunidade).getIdComunidade();
-        Membros alterar = new Membros(pai,false,pai.getGamSys(),idComunidade);
+        Classes.Comunidade  comunidade = comunidades.get(idComunidade);
+        Membros alterar = new Membros(pai,true,pai.getGamSys(),comunidade);
         alterar.setVisible(true);
         alterar.toFront();
     }//GEN-LAST:event_jButton6ActionPerformed

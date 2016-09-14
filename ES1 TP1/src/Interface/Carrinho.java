@@ -35,6 +35,7 @@ public class Carrinho extends javax.swing.JPanel {
             linha[1] =String.valueOf( (float)(i+1)*10);
             ((DefaultTableModel)jTable1.getModel()).addRow(linha);
         }
+        this.jTextField1.setText(String.valueOf((float)100));
         //----------------------------Prototipo---------------------------
         
     }
@@ -184,6 +185,9 @@ public class Carrinho extends javax.swing.JPanel {
         while(dtm.getRowCount() >0){
             dtm.removeRow(0);
         }
+        //Prototipo
+        jTextField1.setText(String.valueOf((float)0));
+        //Prototipo
     }//GEN-LAST:event_jButton1ActionPerformed
 
   

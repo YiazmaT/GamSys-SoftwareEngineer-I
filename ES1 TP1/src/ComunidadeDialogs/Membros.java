@@ -5,6 +5,7 @@
  */
 package ComunidadeDialogs;
 
+import Classes.Comunidade;
 import Classes.GamSys;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -14,15 +15,15 @@ import javax.swing.table.DefaultTableModel;
  * @author Eymar Lima
  */
 public class Membros extends javax.swing.JDialog {
-    private int idComunidade;
+    private Comunidade comunidade;
     private GamSys controlador;
     /**
      * Creates new form Membros
      */
-    public Membros(java.awt.Frame parent, boolean modal, GamSys Controlador, int idComunidade) {
+    public Membros(java.awt.Frame parent, boolean modal, GamSys controlador, Comunidade comunidade) {
         super(parent, modal);
         initComponents();
-        this.idComunidade = idComunidade;
+        this.comunidade = comunidade;
         this.controlador = controlador;
         
         String[] linha = new String[1];
@@ -112,7 +113,9 @@ public class Membros extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null,"Selecione um Usuário");
         }else
         {
-            controlador.removerUsuarioComunidade(idComunidade,  Integer.valueOf((String)(((DefaultTableModel)jTable1.getModel()).getValueAt(selectedRow, 1))));
+            int idComunidade = comunidade.getIdComunidade();
+            int idUsuario = comunidade.getMembrosAt(selectedRow);
+            controlador.removerUsuarioComunidade(idComunidade,idUsuario);
             JOptionPane.showMessageDialog(null,"Usuario removido com sucesso");
             this.dispose();
         }

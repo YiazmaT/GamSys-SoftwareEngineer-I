@@ -83,12 +83,12 @@ public class Usuario {
     public static Usuario buscarUsuario(String email, String senha){
         //Fazer a busca na base de dados;
         //-----------------------------------------------------TODO---------------------
-        return new Usuario("nullNome",senha,email,"nullCPF",false);
+        return new Usuario("Nome",senha,email,"nullCPF",true);
     }
     static Usuario buscarUsuario(int idSolicitado) {
         //Facer a busca na base de dados;
         // --------------------------------TODO
-        return new Usuario("nullNome","nullSenha","nullLogin","nullCPF",false);
+        return new Usuario("Nome","nullSenha","nullLogin","nullCPF",true);
     }
     
     public Carrinho getCarrinho(){
@@ -113,6 +113,10 @@ public class Usuario {
 
     public String getNome() {
         return nome;
+    }
+    
+    public boolean isAdmin(){
+        return isAdministrador;
     }
 }
 

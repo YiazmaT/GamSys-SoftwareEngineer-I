@@ -135,7 +135,8 @@ public class NovoMembro extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null,"Selecione um Usuário");
         }else
         {
-            controlador.adicionarAComunidade(idComunidade,  Integer.valueOf((String)(((DefaultTableModel)jTable1.getModel()).getValueAt(selectedRow, 1))));
+            String nome = (String)(((DefaultTableModel)jTable1.getModel()).getValueAt(selectedRow, 0));
+            controlador.adicionarAComunidade(idComunidade,controlador.buscaUsuarioNome(nome));
             JOptionPane.showMessageDialog(null,"Usuario adicionado com sucesso");
             this.dispose();
         }

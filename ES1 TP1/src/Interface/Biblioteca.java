@@ -159,6 +159,7 @@ public class Biblioteca extends javax.swing.JPanel {
                 this.control.downloadSoftware(idSoftware);
                 JOptionPane.showMessageDialog(null,"Software baixado");
                 
+                ((DefaultTableModel)jTable1.getModel()).setValueAt("sim",selectedRow,1);
                 
             }
             

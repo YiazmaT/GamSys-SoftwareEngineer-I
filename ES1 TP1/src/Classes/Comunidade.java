@@ -6,7 +6,7 @@ public class Comunidade {
     private String nome;
     private boolean tipo;
     private String descricao;
-    private Usuario [] membros;
+    private ArrayList<Usuario> membros;
     private ArrayList<Post> posts;
     private int idComunidade;
     
@@ -17,6 +17,7 @@ public class Comunidade {
         this.membros = null;
         posts = new ArrayList<>();
         this.idComunidade = idComunidade;
+        this.membros = new ArrayList<Usuario>();
     }
 
     public int getIdComunidade() {
@@ -51,14 +52,9 @@ public class Comunidade {
         this.descricao = descricao;
     }
 
-    public Usuario[] getMembros() {
-        return membros;
-    }
+    
 
-    public void setMembros(Usuario[] membros) {
-        this.membros = membros;
-    }
-
+  
     public ArrayList<Post> getPosts() {
         return posts;
     }
@@ -79,5 +75,11 @@ public class Comunidade {
     }
     public void removerMembro(int idMembro){
         //
+    }
+
+    public int getMembrosAt(int posiComunidade) {
+        if(posiComunidade < membros.size()){
+            return membros.get(posiComunidade).getIdUsuario();
+        }return -1;
     }
 }

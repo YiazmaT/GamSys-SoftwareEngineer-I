@@ -76,7 +76,11 @@ public class GamSys {
         //
     }
     public void removerUsuarioComunidade(int idMembro, int idComunidade){
-        //
+        for(Comunidade a : comunidades){
+            if(a.getIdComunidade() == idComunidade){
+                a.removerMembro(idMembro);
+            }
+        }
     }
     
     public Usuario getUsuarioLogado(){
