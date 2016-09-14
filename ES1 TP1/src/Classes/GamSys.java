@@ -36,8 +36,8 @@ public class GamSys {
     public void atualizarDadosUsuario(String nome, String email, String senha, String cpf){
         //
     }
-    public void alteraProdutoLoja(String nome, String descricao, int idSoftware){
-        //
+    public void alteraProdutoLoja(String nome, String descricao, int idSoftware, float valor){
+        loja.alterarInformacoesProduto(nome, descricao, idSoftware, valor);
     }
     public void atualizarSoftware(int idSoftware){
         usuarioLogado.atualizarSoftware(idSoftware);

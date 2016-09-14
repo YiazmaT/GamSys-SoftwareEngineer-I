@@ -5,21 +5,24 @@
  */
 package Interface;
 
+import Classes.GamSys;
 import Classes.Software;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Eymar Lima
  */
 public class ItenLoja extends javax.swing.JPanel {
-
+    private GamSys controlador;
     private Loja loja;
     private Software software;
     
-    public ItenLoja(Software software,Loja loja,boolean isAdmin) {
+    public ItenLoja(Software software,Loja loja,boolean isAdmin, GamSys controlador) {
         initComponents();
+        this.controlador = controlador;
         this.software = software;
-        
+        this.loja = loja;
         jTextField1.setText(software.getNome());
         jTextField2.setText(String.valueOf(software.getPreco()));
         jTextPane1.setText(software.getDescricao());
@@ -139,10 +142,11 @@ public class ItenLoja extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         loja.adcionarItemCarrinho(software);
+        JOptionPane.showMessageDialog(null, "Software adicionado com sucesso");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        AlterarProdutoLoja produto = new AlterarProdutoLoja(null,false);
+        AlterarProdutoLoja produto = new AlterarProdutoLoja(null,false,controlador);
         produto.setVisible(true);
         produto.toFront();
     }//GEN-LAST:event_jButton2ActionPerformed

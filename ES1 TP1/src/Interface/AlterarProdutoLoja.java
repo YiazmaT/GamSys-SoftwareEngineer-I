@@ -5,18 +5,22 @@
  */
 package Interface;
 
+import Classes.GamSys;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Eymar Lima
  */
 public class AlterarProdutoLoja extends javax.swing.JDialog {
-
+    private GamSys controlador;
     /**
      * Creates new form NewJDialog
      */
-    public AlterarProdutoLoja(java.awt.Frame parent, boolean modal) {
+    public AlterarProdutoLoja(java.awt.Frame parent, boolean modal,GamSys controlador) {
         super(parent, modal);
         initComponents();
+        this.controlador = controlador;
     }
 
     /**
@@ -65,6 +69,11 @@ public class AlterarProdutoLoja extends javax.swing.JDialog {
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/shuffle (1).png"))); // NOI18N
         jButton2.setText("Alterar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -139,6 +148,15 @@ public class AlterarProdutoLoja extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String nome = jTextField2.getText();
+        int valor = Integer.parseInt(jTextField3.getText());
+        String descricao = jTextPane1.getText();
+        
+        controlador.alteraProdutoLoja(nome, descricao, valor);
+        JOptionPane.showMessageDialog(null,"Informações alteradas com sucesso");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -167,20 +185,7 @@ public class AlterarProdutoLoja extends javax.swing.JDialog {
         //</editor-fold>
         //</editor-fold>
 
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                AlterarProdutoLoja dialog = new AlterarProdutoLoja(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
