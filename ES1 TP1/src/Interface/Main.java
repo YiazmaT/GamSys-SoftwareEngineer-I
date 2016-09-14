@@ -88,7 +88,7 @@ public class Main extends javax.swing.JFrame {
     }
     public void chamarTrocarInformacoes(){
         principal.removeAll();
-        principal.add(new AlterarInformacoesPessoais(controlador));
+        principal.add(new AlterarInformacoesPessoais(controlador,this));
         principal.revalidate();
         principal.repaint();
     }

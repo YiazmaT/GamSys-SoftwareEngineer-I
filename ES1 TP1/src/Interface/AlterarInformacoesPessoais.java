@@ -6,6 +6,7 @@
 package Interface;
 
 import Classes.GamSys;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,10 +17,12 @@ public class AlterarInformacoesPessoais extends javax.swing.JPanel {
     /**
      * Creates new form AlterarInformacoesPessoais
      */
-    public AlterarInformacoesPessoais(GamSys controlador) {
+    private Main pai;
+    public AlterarInformacoesPessoais(GamSys controlador, Main pai) {
         initComponents();
         this.controlador = controlador;
-    }
+        this.pai = pai;
+    }   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -198,7 +201,10 @@ public class AlterarInformacoesPessoais extends javax.swing.JPanel {
         senha = jTextField5.getText();
         cpf = jTextField2.getText();
 
-
+        controlador.atualizarDadosUsuario(nome, email, senha, cpf);
+        
+        JOptionPane.showMessageDialog(null, "Informações alteradas com sucesso");
+        pai.chamarMenuInicial();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed

@@ -157,6 +157,7 @@ public class AlterarProdutoLoja extends javax.swing.JDialog {
         
         loja.alteraProdutoLoja(nome, descricao, valor);
         JOptionPane.showMessageDialog(null,"Informações alteradas com sucesso");
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

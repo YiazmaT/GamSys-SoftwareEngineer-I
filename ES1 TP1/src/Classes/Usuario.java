@@ -48,7 +48,10 @@ public class Usuario {
         //
     }
     public void atualizarDados(String nome, String email, String senha, String cpf){
-        //
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.cpf = cpf;
     }
     public void solicitarIntroducaoProdutoCarrinho(Software produto){
         carrinho.adicionarProdutoCarrinho(produto);
